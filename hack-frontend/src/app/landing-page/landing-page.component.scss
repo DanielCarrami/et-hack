@@ -10,6 +10,53 @@
     flex-direction: column;
 }
 
+.middle-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    font-family: 'IBM Plex Sans Bold';
+    font-size: 40px;
+}
+
+.text{
+    font-family: 'IBM Regular';
+    font-size: 23px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.register{
+    background-color: #00af88;
+    border: #00af88;
+    border-radius: 35px;
+    height: 64px;
+    font-size: 20pt;
+    font-family: 'IBM Semibold';
+    color: #ffffff;
+}
+
+.info-button{
+    border-width: 3pt;
+    color: #00af88;
+    background-color: transparent;
+    border-radius: 35px;
+    height: 64px;
+    font-size: 20pt;
+    font-family: 'IBM Semibold';
+}
+
 img{
-    width: 500px;
+    width: 700px;
 }
