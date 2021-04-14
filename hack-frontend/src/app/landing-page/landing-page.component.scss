@@ -1,13 +1,24 @@
 .landing-background{
-    background-color: #372f50;
+    background-color: #372e50;
     color: #fffffa;
     height: 100vh;
     margin: -10px;
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
+}
+
+.logo-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.logo{
+    width: 250px;
 }
 
 .middle-section{
@@ -19,44 +30,55 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 .title{
     font-family: 'IBM Plex Sans Bold';
-    font-size: 40px;
+    font-size: 50px;
+    line-height: 45px;
+    font-weight: 100;
 }
 
 .text{
     font-family: 'IBM Regular';
-    font-size: 23px;
+    font-size: 25px;
+    margin-top: -5px;
+    margin-bottom: 60PX;
 }
 
 .buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .register{
     background-color: #00af88;
     border: #00af88;
     border-radius: 35px;
-    height: 64px;
-    font-size: 20pt;
+    height: 50px;
+    font-size: 13pt;
     font-family: 'IBM Semibold';
     color: #ffffff;
+    width: 135px;
+    
 }
 
 .info-button{
     border-width: 3pt;
     color: #00af88;
-    background-color: transparent;
+    border-color: #00af88;
+    background-color: #372e50;
     border-radius: 35px;
-    height: 64px;
-    font-size: 20pt;
+    height: 50px;
+    font-size: 13pt;
     font-family: 'IBM Semibold';
+    margin-left: 20px;
+    width: 135px;
 }
 
 img{
-    width: 700px;
+    transform: translateX(-20px) translateY(30px);
+    width: 550px;
 }
