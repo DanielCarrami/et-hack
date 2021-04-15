@@ -1,0 +1,67 @@
+.about-background{
+    background-color: #372e50;
+    color: #fffffa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-container{
+    background-color: #282232;
+    border-radius: 35px;
+    height: 480px;
+    width: 1260px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.upper-text{
+    font-family: 'IBM Semibold';
+    color: #5f577c;
+    font-size: 18px;
+}
+
+.main-text{
+    font-family: 'IBM Semibold';
+    font-size: 35px;
+}
+
+.main-text-desc{
+    margin-top: 10px;
+    line-height: 25px;
+    font-family: 'IBM Regular';
+}
+
+.button-container{
+    margin-top: 40px;
+}
+
+.button{
+    text-decoration: none;
+    color: #00af88;
+    font-family: 'IBM Semibold';
+    padding: 10px;
+    border-radius: 35px;
+    border: 3px solid #00af88;
+    width: auto;
+    flex-grow: 0;
+}
+
+.image{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main-img{
+    height: 380px;
+}
