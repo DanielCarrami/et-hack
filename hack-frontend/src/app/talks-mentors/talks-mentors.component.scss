@@ -1,0 +1,111 @@
+//BACKGROUND
+.mentors-background{
+    background-color: #ffffff;
+    color: #372e50;
+    height: 100vh;
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+// GENERAL TEXT
+.subtitle{
+    font-family: 'IBM Plex Sans';
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+}
+
+.title{
+    font-family: 'IBM Plex Sans';
+    font-size: 20px;
+    line-height: 45px;
+    font-weight:300;
+    justify-content: center;
+    text-align: center
+}
+
+.text{
+    font-family: 'IBM Regular';
+    font-size: 25px;
+    margin-top: -5px;
+    margin-bottom: 60PX;
+}
+
+
+//MENTORS SECTION (MultiCard carousel)
+
+.mentors-section{
+    font-family: 'IBM Plex Sans Bold';
+    display: flex;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.card{
+    width: 18rem;
+    border: 0ch;
+    background: none;
+}
+
+.card-img-top{
+    transform: translateY(30px);
+}
+.card-title{
+    font-family: 'IBM Plex Sans';
+    font-size:x-large;
+
+}
+
+.card-text{
+    font-family: 'IBM Plex Sans';
+    color: #5f577c;
+    font-size:large;
+}
+
+.card-body{
+    background-color: #372e50;
+    border-radius: 10%;
+    position:relative;
+    transform: translateY(-30px);
+}
+
+.carousel-control {
+    padding-top: 10%;
+    width: 5%;
+}
+
+.btn{
+    color: #00af88;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.logo-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 50%;
+    color-adjust: #5f577c;
+    padding-bottom: 2rem;
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+    box-shadow: 
+       1rem 0 #fff,
+      -1rem 0 0 #fff;
+}
