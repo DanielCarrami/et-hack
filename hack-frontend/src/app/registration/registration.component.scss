@@ -1,7 +1,36 @@
-.example-container {
+.main{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container {
+    align-self: center;
     height: 80vh;
+    width: 100%;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     border: 1px solid #555;
-  }
+}
+
+mat-drawer{
+    height: 80%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+}
+
+
+.side-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
