@@ -1,0 +1,101 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div>
+            <button (click)="continue(1)">Nombre del Equipo</button>
+        </div>
+        <div>
+            <button (click)="continue(2)">Tipo de equipo</button>
+        </div>
+        <div>
+            <button (click)="continue(3)">Temática a seleccionar</button>
+        </div>
+        <div>
+            <button (click)="continue(4)">Info de hackers</button>
+            <div>
+                <button (click)="continue(4)">Hacker Master</button>
+            </div>
+            <div>
+                <button (click)="continue(5)">Hacker 2</button>
+            </div>
+            <div>
+                <button (click)="continue(6)">Hacker 3</button>
+            </div>
+            <div>
+                <button (click)="continue(7)">Hacker 4</button>
+            </div>
+            <div>
+                <button (click)="continue(8)">Hacker 5</button>
+            </div>
+        </div>
+        <div>
+            <button (click)="continue(9)">¡Ya casi!</button>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <form>
+            <div *ngIf="step == 1">
+                <h4>Nombre del equipo</h4>
+                <div>
+                    <label>Nombre del equipo</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 2">
+                <h4>Tipo de equipo</h4>
+                <div>
+                    <label>Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 3">
+                <h4>Temática a seleccionar</h4>
+                <div>
+                    <label>Selecciona la temática en la que tu equipo desea participar</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 4">
+                <h4>Ready Hacker Master</h4>
+                <div>
+                    <label>Ingresa tus datos generales</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 5">
+                <h4>Ready Hacker 2</h4>
+                <div>
+                    <label>Ingresa tus datos generales</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 6">
+                <h4>Ready Hacker 3</h4>
+                <div>
+                    <label>Ingresa tus datos generales</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 7">
+                <h4>Ready Hacker 4</h4>
+                <div>
+                    <label>Ingresa tus datos generales</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 8">
+                <h4>Ready Hacker 5</h4>
+                <div>
+                    <label>Ingresa tus datos generales</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <div *ngIf="step == 9">
+                <h4>Ya Casi</h4>
+                <div>
+                    <label>Terminos y condiciones</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+        </form>
+    </mat-drawer-content>
+</mat-drawer-container>
