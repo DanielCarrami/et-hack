@@ -2,7 +2,7 @@
 <mat-drawer-container class="container">
     <mat-drawer mode="side" opened>
         <div class="side-container">
-            <div>
+            <div >
                 <button mat-button (click)="continue(1)">
                     <mat-icon svgIcon="text"></mat-icon>
                     Nombre del Equipo
@@ -77,42 +77,49 @@
  
                         <button class="continue" mat-button>Continuar</button>
                     </div>
-                    
+ 
             </div>
-            <div *ngIf="step == 2">
-                <h4>Tipo de equipo</h4>
-                <div>
-                    <label>Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
+            <div class="team-name" *ngIf="step == 2">
+                <label class="title">Tipo de equipo</label>
+                    <label class="instruction">Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
                     <mat-radio-group>
                         <mat-radio-button *ngFor="let type of teamTypes" [value]="type.name">
                             <mat-card>
-                                
-                                <mat-card-title>{{type.name}}</mat-card-title>
                                 <mat-card-content>
                                     <img src="{{type.icon}}">
                                 </mat-card-content>
-                            </mat-card>
-                        </mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </div>
-            <div *ngIf="step == 3">
-                <h4>Temática a seleccionar</h4>
-                <div>
-                    <label>Selecciona la temática en la que tu equipo desea participar</label>
-                    <mat-radio-group>
-                        <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name">
-                            <mat-card>
-                                
-                                <mat-card-title>{{rank.name}}</mat-card-title>
-                                <mat-card-content>
-                                    <img src="{{rank.icon}}">
+                                <mat-card-title>{{type.name}}</mat-card-title>
+                                <mat-card-content >
+                                    <div class="content">{{type.description}}</div>
                                 </mat-card-content>
                             </mat-card>
                         </mat-radio-button>
                     </mat-radio-group>
-                </div>
+                    <div>
+                        <button class="back" mat-button>Regresar</button>
+ 
+                        <button class="continue" mat-button>Continuar</button>
+                    </div>
             </div>
+            <div class="team-name" *ngIf="step == 3">
+                <label class="title">Temática a seleccionar</label>
+                <label class="instruction">Selecciona la temática en la que tu equipo desea participar</label>
+                <mat-radio-group>
+                    <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name">
+                        <mat-card>    
+                            <mat-card-content>
+                                <img src="{{rank.icon}}">
+                            </mat-card-content>
+                            <mat-card-title>{{rank.name}}</mat-card-title>
+                        </mat-card>
+                    </mat-radio-button>
+                </mat-radio-group>
+                <div>
+                    <button class="back" mat-button>Regresar</button>
+
+                    <button class="continue" mat-button>Continuar</button>
+                </div>
+            </div>       
             <div *ngIf="step == 4">
                 <h4>Ready Hacker Master</h4>
                 <div>

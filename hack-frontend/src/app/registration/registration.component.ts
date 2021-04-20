@@ -16,9 +16,9 @@ export class RegistrationComponent implements OnInit {
   ]
 
   teamTypes = [
-    {name: "Local", icon: "assets/images/local.png"},
-    {name: "Externo", icon: "assets/images/externo.png"},
-    {name: "Mixto", icon: "assets/images/mixto.png"}
+    {name: "Local", icon: "assets/images/local.png", description: "Hackers inscritos en el sistema Tec.", size: "150px"},
+    {name: "Externo", icon: "assets/images/externo.png", description: "Hackers estudiantes fuera del sistema Tec", size: "125px"},
+    {name: "Mixto", icon: "assets/images/mixto.png", description: "Equipo de Hackers locales y externos", size: "125px"}
   ]
   constructor(
     private matIconRegistry: MatIconRegistry,
