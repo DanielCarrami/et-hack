@@ -26,31 +26,31 @@
                     Info de hackers
                 </button>
                 <div>
-                    <button mat-button (click)="continue(4)">
+                    <button mat-button (click)="continue(4)" style="margin-left: 20px;">
                         <mat-icon svgIcon="master"></mat-icon>
                         Hacker Master
                     </button>
                 </div>
                 <div>
-                    <button mat-button (click)="continue(5)">
+                    <button mat-button (click)="continue(5)" style="margin-left: 20px;">
                         <mat-icon svgIcon="hacker"></mat-icon>
                         Hacker 2
                     </button>
                 </div>
                 <div>
-                    <button mat-button (click)="continue(6)">
+                    <button mat-button (click)="continue(6)" style="margin-left: 20px;">
                         <mat-icon svgIcon="hacker"></mat-icon>
                         Hacker 3
                     </button>
                 </div>
                 <div>
-                    <button mat-button (click)="continue(7)">
+                    <button mat-button (click)="continue(7)" style="margin-left: 20px;">
                         <mat-icon svgIcon="hacker"></mat-icon>
                         Hacker 4
                     </button>
                 </div>
                 <div>
-                    <button mat-button (click)="continue(8)">
+                    <button mat-button (click)="continue(8)" style="margin-left: 20px;">
                         <mat-icon svgIcon="hacker"></mat-icon>
                         Hacker 5
                     </button>
@@ -64,14 +64,20 @@
             </div>
     </div>
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content style="overflow: visible;">
         <form>
-            <div *ngIf="step == 1">
-                <h4>Nombre del equipo</h4>
-                <div>
-                    <label>Nombre del equipo</label>
-                    <input type="text" placeholder="Awesome_name_goes_here">
-                </div>
+            <div class="team-name" *ngIf="step == 1">
+                    <label class="title">Nombre del equipo</label>
+                    <label class="instruction">Escribe el nombre de tu equipo</label>
+                    <mat-icon style="width: 20%; height: 20%;" svgIcon="hacker-logo"></mat-icon>
+                    <input class="big-input" type="text" placeholder="Awesome_name_goes_here">
+                    <label class="disclaimer">*Nombre inapropiados serán inapropiados</label>
+                    <div>
+                        <button class="back" mat-button>Regresar</button>
+ 
+                        <button class="continue" mat-button>Continuar</button>
+                    </div>
+                    
             </div>
             <div *ngIf="step == 2">
                 <h4>Tipo de equipo</h4>

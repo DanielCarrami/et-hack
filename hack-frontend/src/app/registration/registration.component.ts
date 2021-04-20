@@ -48,6 +48,11 @@ export class RegistrationComponent implements OnInit {
         `hacker`,
         this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/icons/hacker icon.svg`)
       );
+      this.matIconRegistry.addSvgIcon(
+        `hacker-logo`,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/icons/Logo terciario.svg`)
+      );
+      
       /*this.matIconRegistry.addSvgIcon(
         `almost`,
         this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/icons/box icon.svg`)

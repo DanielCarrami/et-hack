@@ -4,33 +4,103 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: whitesmoke;
+    
 }
 .container {
     align-self: center;
     height: 80vh;
+    background-color: whitesmoke;
     width: 100%;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     margin-right: 10px;
-    border: 1px solid #555;
+    overflow: visible;
 }
 
 mat-drawer{
-    height: 80%;
-    margin-top: 20px;
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blanchedalmond;
     border-radius: 15px;
 }
-
 
 .side-container{
     height: 100%;
     display: flex;
-    justify-content: center;
+    background-color: white;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-direction: column;
 }
 
+form{
+    height: 100%;
+    width: 80%;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: -15px;
+    margin-left: 50px;
+    margin-right: 70px;
+}
+
+.team-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.title{
+    font-family: 'IBM Plex Sans Bold';
+    font-size: 50px;
+}
+
+.instruction{
+    font-family: 'IBM Semibold';
+    font-size: 30px;
+}
+
+.disclaimer{
+    margin-top: -20px;
+    color: gray;
+}
+
+.big-input{
+    width: 65%;
+    height: 15%;
+    border-radius: 100px;
+    border: transparent;
+    background-color: whitesmoke;
+    font-family: 'IBM Semibold';
+    text-align: center;
+    font-size: 40px;
+}
+
+.continue{
+    background-color: #00af88;
+    border: #00af88;
+    border-radius: 35px;
+    height: 50px;
+    font-size: 13pt;
+    font-family: 'IBM Semibold';
+    color: #ffffff;
+    width: 135px;
+    margin-left: 10px;
+    
+}
+
+.back{
+    margin-right: 10px;
+    border-color: #00af88;
+    color: #00af88;
+    border-style: solid;
+    border-radius: 35px;
+    height: 50px;
+    font-size: 13pt;
+    font-family: 'IBM Semibold';
+    margin-left: 20px;
+    width: 135px;
+}
