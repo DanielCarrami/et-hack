@@ -65,25 +65,24 @@
     </div>
     </mat-drawer>
     <mat-drawer-content style="overflow: visible;">
-        <form>
+        <form [formGroup]="teamInfo">
             <div class="team-name" *ngIf="step == 1">
                     <label class="title">Nombre del equipo</label>
                     <label class="instruction">Escribe el nombre de tu equipo</label>
-                    <mat-icon style="width: 20%; height: 20%;" svgIcon="hacker-logo"></mat-icon>
-                    <input class="big-input" type="text" placeholder="Awesome_name_goes_here">
+                    <mat-icon style="width: 20%; height: 20%; margin-bottom: 50px;" svgIcon="hacker-logo"></mat-icon>
+                    <input class="big-input" type="text" placeholder="Awesome_name_goes_here" formControlName="name">
                     <label class="disclaimer">*Nombre inapropiados serán inapropiados</label>
-                    <div>
+                    <div class="button-rack">
                         <button class="back" mat-button>Regresar</button>
- 
-                        <button class="continue" mat-button>Continuar</button>
+                        <button class="continue" mat-button (click)="continue(2)">Continuar</button>
                     </div>
  
             </div>
             <div class="team-name" *ngIf="step == 2">
                 <label class="title">Tipo de equipo</label>
                     <label class="instruction">Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
-                    <mat-radio-group>
-                        <mat-radio-button *ngFor="let type of teamTypes" [value]="type.name">
+                    <mat-radio-group formControlName="type">
+                        <mat-radio-button *ngFor="let type of teamTypes" [value]="type.name" >
                             <mat-card>
                                 <mat-card-content>
                                     <img src="{{type.icon}}">
@@ -95,16 +94,16 @@
                             </mat-card>
                         </mat-radio-button>
                     </mat-radio-group>
-                    <div>
-                        <button class="back" mat-button>Regresar</button>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(1)">Regresar</button>
  
-                        <button class="continue" mat-button>Continuar</button>
+                        <button class="continue" mat-button (click)="continue(3)">Continuar</button>
                     </div>
             </div>
             <div class="team-name" *ngIf="step == 3">
                 <label class="title">Temática a seleccionar</label>
                 <label class="instruction">Selecciona la temática en la que tu equipo desea participar</label>
-                <mat-radio-group>
+                <mat-radio-group formControlName="rank">
                     <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name">
                         <mat-card>    
                             <mat-card-content>
@@ -114,54 +113,224 @@
                         </mat-card>
                     </mat-radio-button>
                 </mat-radio-group>
-                <div>
-                    <button class="back" mat-button>Regresar</button>
+                <div class="button-rack">
+                    <button class="back" mat-button (click)="continue(2)">Regresar</button>
 
-                    <button class="continue" mat-button>Continuar</button>
+                    <button class="continue" mat-button (click)="continue(4)">Continuar</button>
                 </div>
             </div>       
-            <div *ngIf="step == 4">
-                <h4>Ready Hacker Master</h4>
-                <div>
-                    <label>Ingresa tus datos generales</label>
-                    <input type="text" placeholder="Awesome_name_goes_here">
-                </div>
+            <div *ngIf="step == 4" class="team-name" formGroupName="hackerM">
+                    <label class="title">Ready Hacker Master</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto. A través del Hacker Master nos comunicaremos con tu equipo</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección*</label>
+                        <input class="text-field" type="text" placeholder="P. Sherman, Calle Wallaby 42 Sydney*" formControlName="address">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Número de teléfono*</label>
+                        <input class="text-field" type="text" placeholder="10101010101010*" formControlName="phone">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(3)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(5)">Continuar</button>
+                    </div>
             </div>
-            <div *ngIf="step == 5">
-                <h4>Ready Hacker 2</h4>
-                <div>
-                    <label>Ingresa tus datos generales</label>
-                    <input type="text" placeholder="Awesome_name_goes_here">
-                </div>
+            <div *ngIf="step == 5" class="team-name" formGroupName="hacker2">
+                <label class="title">Ready Hacker 2</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección*</label>
+                        <input class="text-field" type="text" placeholder="P. Sherman, Calle Wallaby 42 Sydney*" formControlName="address">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(4)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(6)">Continuar</button>
+                    </div>
             </div>
-            <div *ngIf="step == 6">
-                <h4>Ready Hacker 3</h4>
-                <div>
-                    <label>Ingresa tus datos generales</label>
-                    <input type="text" placeholder="Awesome_name_goes_here">
-                </div>
+            <div *ngIf="step == 6" class="team-name" formGroupName="hacker3">
+                <label class="title">Ready Hacker 3</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección*</label>
+                        <input class="text-field" type="text" placeholder="P. Sherman, Calle Wallaby 42 Sydney*" formControlName="address">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(5)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(7)">Continuar</button>
+                    </div>
             </div>
-            <div *ngIf="step == 7">
-                <h4>Ready Hacker 4</h4>
-                <div>
-                    <label>Ingresa tus datos generales</label>
-                    <input type="text" placeholder="Awesome_name_goes_here">
-                </div>
+            <div *ngIf="step == 7" class="team-name" formGroupName="hacker4">
+                <label class="title">Ready Hacker 4</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección*</label>
+                        <input class="text-field" type="text" placeholder="P. Sherman, Calle Wallaby 42 Sydney*" formControlName="address">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(6)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(8)">Continuar</button>
+                    </div>
             </div>
-            <div *ngIf="step == 8">
-                <h4>Ready Hacker 5</h4>
-                <div>
-                    <label>Ingresa tus datos generales</label>
-                    <input type="text" placeholder="Awesome_name_goes_here">
-                </div>
+            <div *ngIf="step == 8" class="team-name" formGroupName="hacker5">
+                <label class="title">Ready Hacker 5</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección*</label>
+                        <input class="text-field" type="text" placeholder="P. Sherman, Calle Wallaby 42 Sydney*" formControlName="address">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(7)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(9)">Continuar</button>
+                    </div>
             </div>
-            <div *ngIf="step == 9">
+            <div *ngIf="step == 9" class="team-name">
                 <h4>Ya Casi</h4>
                 <div>
                     <label>Terminos y condiciones</label>
                     <input type="text" placeholder="Awesome_name_goes_here">
                 </div>
             </div>
+            <pre>{{teamInfo.value | json}}</pre>
         </form>
     </mat-drawer-content>
 </mat-drawer-container>

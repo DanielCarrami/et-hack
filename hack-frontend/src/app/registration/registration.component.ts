@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+
 
 @Component({
   selector: 'app-registration',
@@ -20,6 +22,58 @@ export class RegistrationComponent implements OnInit {
     {name: "Externo", icon: "assets/images/externo.png", description: "Hackers estudiantes fuera del sistema Tec", size: "125px"},
     {name: "Mixto", icon: "assets/images/mixto.png", description: "Equipo de Hackers locales y externos", size: "125px"}
   ]
+
+  teamInfo = new FormGroup({
+    name: new FormControl(''),
+    type: new FormControl(''),
+    rank: new FormControl(''),
+    hackerM: new FormGroup({
+      name: new FormControl(''),
+      address: new FormControl(''),
+      phone: new FormControl(''),
+      code: new FormControl(''),
+      campus: new FormControl(''),
+      major: new FormControl(''),
+      semester: new FormControl('')
+    }),
+    hacker2: new FormGroup({
+      name: new FormControl(''),
+      address: new FormControl(''),
+      phone: new FormControl(''),
+      code: new FormControl(''),
+      campus: new FormControl(''),
+      major: new FormControl(''),
+      semester: new FormControl('')
+    }),
+    hacker3: new FormGroup({
+      name: new FormControl(''),
+      address: new FormControl(''),
+      phone: new FormControl(''),
+      code: new FormControl(''),
+      campus: new FormControl(''),
+      major: new FormControl(''),
+      semester: new FormControl('')
+    }),
+    hacker4: new FormGroup({
+      name: new FormControl(''),
+      address: new FormControl(''),
+      phone: new FormControl(''),
+      code: new FormControl(''),
+      campus: new FormControl(''),
+      major: new FormControl(''),
+      semester: new FormControl('')
+    }),
+    hacker5: new FormGroup({
+      name: new FormControl(''),
+      address: new FormControl(''),
+      phone: new FormControl(''),
+      code: new FormControl(''),
+      campus: new FormControl(''),
+      major: new FormControl(''),
+      semester: new FormControl('')
+    })
+  });
+
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer

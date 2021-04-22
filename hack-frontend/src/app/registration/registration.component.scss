@@ -1,29 +1,26 @@
 .main{
     display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    min-height: 100vh;
     background-color: whitesmoke;
     
 }
 .container {
-    align-self: center;
-    height: 80vh;
     background-color: whitesmoke;
     width: 100%;
     margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 10px;
     overflow: visible;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 mat-drawer{
-    height: 60%;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    margin-left: 50px;
 }
 
 .side-container{
@@ -36,12 +33,11 @@ mat-drawer{
 }
 
 form{
-    height: 100%;
+    height: fit-content;
     width: 80%;
     background-color: white;
     border-radius: 25px;
-    margin-top: -15px;
-    margin-left: 50px;
+    margin-left: 80px;
     margin-right: 70px;
 }
 
@@ -56,22 +52,30 @@ form{
 .title{
     font-family: 'IBM Plex Sans Bold';
     font-size: 50px;
+    margin: 70px 0 30px 0;
 }
 
 .instruction{
     font-family: 'IBM Semibold';
     font-size: 30px;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .disclaimer{
-    margin-top: -20px;
     color: gray;
+}
+
+.button-rack{
+    margin: 50px 0 40px 0;
 }
 
 .big-input{
     width: 65%;
-    height: 15%;
+    height: 100px;
     border-radius: 100px;
+    margin-bottom: 30px;
     border: transparent;
     background-color: whitesmoke;
     font-family: 'IBM Semibold';
@@ -150,4 +154,40 @@ mat-radio-group{
     flex-direction: row;
     justify-content: space-evenly;
     width: 70%;
+}
+
+.text-field{
+    width: 100%;
+    min-height: 60px;
+    min-width: 250px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: whitesmoke;
+    font-family: 'IBM Semibold';
+    padding-left: 20px;
+}
+
+.form-label{
+    text-align: start;
+    width: 100%;
+    font-family: 'IBM Semibold';
+    margin-left: 20px;
+}
+
+.form-field{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.double-field{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
 }
