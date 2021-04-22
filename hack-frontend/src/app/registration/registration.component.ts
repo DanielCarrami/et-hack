@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
-
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +11,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class RegistrationComponent implements OnInit {
   step: any = 1;
-
+  nameFlag: boolean = false;
   ranks = [
     {name: "Concientizacion", icon: "assets/images/consiencia.png"},
     {name: "Manejo de residuos", icon: "assets/images/mask.png"}
@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
   ]
 
   teamInfo = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', Validators.required),
     type: new FormControl(''),
     rank: new FormControl(''),
     hackerM: new FormGroup({
@@ -117,7 +117,16 @@ export class RegistrationComponent implements OnInit {
   }
 
   continue(change: any): void{
+    if(this.teamInfo.controls.name.invalid && this.step == 1){
+      this.nameFlag = true;
+      return;
+    }
+    this.nameFlag = false;
     this.step = change;
+  }
+
+  submit(): void {
+    console.log(this.teamInfo.value);
   }
 
 }

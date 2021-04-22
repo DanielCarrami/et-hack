@@ -63,14 +63,15 @@
                 </button>
             </div>
     </div>
-    </mat-drawer>
+</mat-drawer>
     <mat-drawer-content style="overflow: visible;">
-        <form [formGroup]="teamInfo">
+        <form [formGroup]="teamInfo" (ngSubmit)="submit()">
             <div class="team-name" *ngIf="step == 1">
                     <label class="title">Nombre del equipo</label>
                     <label class="instruction">Escribe el nombre de tu equipo</label>
                     <mat-icon style="width: 20%; height: 20%; margin-bottom: 50px;" svgIcon="hacker-logo"></mat-icon>
                     <input class="big-input" type="text" placeholder="Awesome_name_goes_here" formControlName="name">
+                    <span class="text-danger" *ngIf="nameFlag">No olvides escribir el nombre de tu equipo</span>
                     <label class="disclaimer">*Nombre inapropiados serán inapropiados</label>
                     <div class="button-rack">
                         <button class="back" mat-button>Regresar</button>
