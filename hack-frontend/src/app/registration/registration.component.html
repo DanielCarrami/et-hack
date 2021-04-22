@@ -1,0 +1,346 @@
+<div class="main">
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened>
+        <div class="side-container">
+            <div >
+                <button mat-button (click)="continue(1)">
+                    <mat-icon svgIcon="text"></mat-icon>
+                    Nombre del Equipo
+                </button>
+            </div>
+            <div>
+                <button mat-button (click)="continue(2)">
+                    <mat-icon svgIcon="type"></mat-icon>
+                    Tipo de equipo
+                </button>
+            </div>
+            <div>
+                <button  mat-button (click)="continue(3)">
+                    <mat-icon svgIcon="rank"></mat-icon>
+                    Temática a seleccionar
+                </button>
+            </div>
+            <div>
+                <button mat-button (click)="continue(4)">
+                    <mat-icon svgIcon="info"></mat-icon>
+                    Info de hackers
+                </button>
+                <div>
+                    <button mat-button (click)="continue(4)" style="margin-left: 20px;">
+                        <mat-icon svgIcon="master"></mat-icon>
+                        Hacker Master
+                    </button>
+                </div>
+                <div>
+                    <button mat-button (click)="continue(5)" style="margin-left: 20px;">
+                        <mat-icon svgIcon="hacker"></mat-icon>
+                        Hacker 2
+                    </button>
+                </div>
+                <div>
+                    <button mat-button (click)="continue(6)" style="margin-left: 20px;">
+                        <mat-icon svgIcon="hacker"></mat-icon>
+                        Hacker 3
+                    </button>
+                </div>
+                <div>
+                    <button mat-button (click)="continue(7)" style="margin-left: 20px;">
+                        <mat-icon svgIcon="hacker"></mat-icon>
+                        Hacker 4
+                    </button>
+                </div>
+                <div>
+                    <button mat-button (click)="continue(8)" style="margin-left: 20px;">
+                        <mat-icon svgIcon="hacker"></mat-icon>
+                        Hacker 5
+                    </button>
+                </div>
+            </div>
+            <div>
+                <button mat-button (click)="continue(9)">
+                    <mat-icon svgIcon="box"></mat-icon>
+                    ¡Ya casi!
+                </button>
+            </div>
+    </div>
+</mat-drawer>
+    <mat-drawer-content style="overflow: visible;">
+        <form [formGroup]="teamInfo" (ngSubmit)="submit()">
+            <div class="team-name" *ngIf="step == 1">
+                    <label class="title">Nombre del equipo</label>
+                    <label class="instruction">Escribe el nombre de tu equipo</label>
+                    <mat-icon style="width: 20%; height: 20%; margin-bottom: 50px;" svgIcon="hacker-logo"></mat-icon>
+                    <input class="big-input" type="text" placeholder="Awesome_name_goes_here" formControlName="name" maxlength="40">
+                    <span class="text-danger" *ngIf="nameFlag">No olvides escribir el nombre de tu equipo</span>
+                    <label class="disclaimer">*Nombre inapropiados serán inapropiados</label>
+                    <div class="button-rack">
+                        <button class="back" mat-button routerLink="/">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(2)">Continuar</button>
+                    </div>
+ 
+            </div>
+            <div class="team-name" *ngIf="step == 2">
+                <label class="title">Tipo de equipo</label>
+                    <label class="instruction">Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
+                    <mat-radio-group formControlName="type" class="asCard">
+                        <mat-radio-button *ngFor="let type of teamTypes" [value]="type.name">
+                            <mat-card>
+                                <mat-card-content>
+                                    <img src="{{type.icon}}">
+                                </mat-card-content>
+                                <mat-card-title>{{type.name}}</mat-card-title>
+                                <mat-card-content >
+                                    <div class="content">{{type.description}}</div>
+                                </mat-card-content>
+                            </mat-card>
+                        </mat-radio-button>
+                        
+                    </mat-radio-group>
+                    <span class="text-danger" *ngIf="teamFlag">No olvides escoger una opción</span>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(1)">Regresar</button>
+ 
+                        <button class="continue" mat-button (click)="continue(3)">Continuar</button>
+                    </div>
+            </div>
+            <div class="team-name" *ngIf="step == 3">
+                <label class="title">Temática a seleccionar</label>
+                <label class="instruction">Selecciona la temática en la que tu equipo desea participar</label>
+                <mat-radio-group class="asCard" formControlName="rank">
+                    <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name">
+                        <mat-card>    
+                            <mat-card-content>
+                                <img src="{{rank.icon}}">
+                            </mat-card-content>
+                            <mat-card-title>{{rank.name}}</mat-card-title>
+                        </mat-card>
+                    </mat-radio-button>
+                </mat-radio-group>
+                <span class="text-danger" *ngIf="rankFlag">No olvides escoger una temática</span>
+                <div class="button-rack">
+                    <button class="back" mat-button (click)="continue(2)">Regresar</button>
+
+                    <button class="continue" mat-button (click)="continue(4)">Continuar</button>
+                </div>
+            </div>       
+            <div *ngIf="step == 4" class="team-name" formGroupName="hackerM">
+                    <label class="title">Ready Hacker Master</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto. A través del Hacker Master nos comunicaremos con tu equipo</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Número de teléfono*</label>
+                        <input class="text-field" type="text" placeholder="10101010101010*" formControlName="phone">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <span class="text-danger" *ngIf="masterFlag">No olvides completar todos los campos</span>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(3)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(5)">Continuar</button>
+                    </div>
+            </div>
+            <div *ngIf="step == 5" class="team-name" formGroupName="hacker2">
+                <label class="title">Ready Hacker 2</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <span class="text-danger" *ngIf="h2Flag">No olvides completar todos los campos</span>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(4)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(6)">Continuar</button>
+                    </div>
+            </div>
+            <div *ngIf="step == 6" class="team-name" formGroupName="hacker3">
+                <label class="title">Ready Hacker 3</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <span class="text-danger" *ngIf="h3Flag">No olvides completar todos los campos</span>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(5)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(7)">Continuar</button>
+                    </div>
+            </div>
+            <div *ngIf="step == 7" class="team-name" formGroupName="hacker4">
+                <label class="title">Ready Hacker 4</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <span class="text-danger" *ngIf="h4Flag">No olvides completar todos los campos</span>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(6)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(8)">Continuar</button>
+                    </div>
+            </div>
+            <div *ngIf="step == 8" class="team-name" formGroupName="hacker5">
+                <label class="title">Ready Hacker 5</label>
+                    <label class="instruction">Ingresa tus datos generales y de contacto.</label>
+                    <div class="form-field">
+                        <label class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Campus*</label>
+                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                        </div>
+                    </div>
+                    <div class="double-field">
+                        <div class="form-field">
+                            <label class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <label class="disclaimer"><span style="color: white;">.</span></label>
+                        </div>
+                        <div style="width: 50px;"></div>
+                        <div class="form-field">
+                            <label class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label class="disclaimer">*No necesariamente acreditados</label>
+                        </div>
+                    </div>
+                    <span class="text-danger" *ngIf="h5Flag">No olvides completar todos los campos</span>
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(7)">Regresar</button>
+                        <button class="continue" mat-button (click)="continue(9)">Continuar</button>
+                    </div>
+            </div>
+            <div *ngIf="step == 9" class="team-name">
+                <h4>Ya Casi</h4>
+                <div>
+                    <label>Terminos y condiciones</label>
+                    <input type="text" placeholder="Awesome_name_goes_here">
+                </div>
+            </div>
+            <pre>{{teamInfo.value | json}}</pre>
+        </form>
+    </mat-drawer-content>
+</mat-drawer-container>
+</div>

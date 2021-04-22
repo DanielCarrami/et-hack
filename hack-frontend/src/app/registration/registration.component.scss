@@ -1,0 +1,198 @@
+.main{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    
+}
+.container {
+    background-color: whitesmoke;
+    width: 100%;
+    margin-top: 10px;
+    overflow: visible;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+mat-drawer{
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-left: 50px;
+}
+
+.side-container{
+    height: 100%;
+    display: flex;
+    background-color: white;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+form{
+    height: fit-content;
+    width: 80%;
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 80px;
+    margin-right: 70px;
+}
+
+.team-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.title{
+    font-family: 'IBM Plex Sans Bold';
+    font-size: 50px;
+    margin: 70px 0 30px 0;
+}
+
+.instruction{
+    font-family: 'IBM Semibold';
+    font-size: 30px;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.disclaimer{
+    color: gray;
+}
+
+.button-rack{
+    margin: 50px 0 40px 0;
+}
+
+.big-input{
+    width: 65%;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 30px;
+    border: transparent;
+    background-color: whitesmoke;
+    font-family: 'IBM Semibold';
+    text-align: center;
+    font-size: 40px;
+}
+
+.continue{
+    background-color: #00af88;
+    border: #00af88;
+    border-radius: 35px;
+    height: 60px;
+    font-size: 13pt;
+    font-family: 'IBM Semibold';
+    color: #ffffff;
+    width: 135px;
+    margin-left: 10px;
+    
+}
+
+.back{
+    margin-right: 10px;
+    border-color: #00af88;
+    color: #00af88;
+    border-style: solid;
+    border-radius: 35px;
+    height: 60px;
+    font-size: 13pt;
+    font-family: 'IBM Semibold';
+    margin-left: 20px;
+    width: 135px;
+}
+
+::ng-deep .mat-radio-button .mat-radio-container {
+    width: 0;
+  }
+  ::ng-deep .mat-radio-container .mat-radio-outer-circle,
+  ::ng-deep .mat-radio-container .mat-radio-inner-circle {
+    border: none;
+    width: 0;
+  }
+
+mat-card{
+    background-color: #372e50;
+    width: 210px;
+    height: 250px;
+    color: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-card-content{
+    overflow-x: hidden;
+    margin-top: 30px;
+}
+
+
+.content{
+    margin-left: 19px;
+    margin-right: 19px;
+    font-size: 15px;
+    white-space: pre-wrap;
+    text-align: center;
+    font: 'IBM Regular';
+}
+
+img{
+    height: 95px;
+}
+
+mat-radio-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+}
+
+.text-field{
+    width: 100%;
+    min-height: 60px;
+    min-width: 250px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: whitesmoke;
+    font-family: 'IBM Semibold';
+    padding-left: 20px;
+}
+
+.form-label{
+    text-align: start;
+    width: 100%;
+    font-family: 'IBM Semibold';
+    margin-left: 20px;
+}
+
+.form-field{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.double-field{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.text-danger{
+    font: 'IBM Semibold';
+    color: red;
+}
