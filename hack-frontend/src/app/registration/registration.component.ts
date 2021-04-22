@@ -12,6 +12,14 @@ import { Validators } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
   step: any = 1;
   nameFlag: boolean = false;
+  teamFlag: boolean = false;
+  rankFlag: boolean = false;
+  masterFlag: boolean = false;
+  h2Flag: boolean = false;
+  h3Flag: boolean = false;
+  h4Flag: boolean = false;
+  h5Flag: boolean = false;
+
   ranks = [
     {name: "Concientizacion", icon: "assets/images/consiencia.png"},
     {name: "Manejo de residuos", icon: "assets/images/mask.png"}
@@ -25,52 +33,48 @@ export class RegistrationComponent implements OnInit {
 
   teamInfo = new FormGroup({
     name: new FormControl('', Validators.required),
-    type: new FormControl(''),
-    rank: new FormControl(''),
+    type: new FormControl('', Validators.required),
+    rank: new FormControl('', Validators.required),
     hackerM: new FormGroup({
-      name: new FormControl(''),
-      address: new FormControl(''),
-      phone: new FormControl(''),
-      code: new FormControl(''),
-      campus: new FormControl(''),
-      major: new FormControl(''),
-      semester: new FormControl('')
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      code: new FormControl('', Validators.required),
+      campus: new FormControl('', Validators.required),
+      major: new FormControl('', Validators.required),
+      semester: new FormControl('', Validators.required)
     }),
     hacker2: new FormGroup({
-      name: new FormControl(''),
-      address: new FormControl(''),
-      phone: new FormControl(''),
-      code: new FormControl(''),
-      campus: new FormControl(''),
-      major: new FormControl(''),
-      semester: new FormControl('')
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      code: new FormControl('', Validators.required),
+      campus: new FormControl('', Validators.required),
+      major: new FormControl('', Validators.required),
+      semester: new FormControl('', Validators.required)
     }),
     hacker3: new FormGroup({
-      name: new FormControl(''),
-      address: new FormControl(''),
-      phone: new FormControl(''),
-      code: new FormControl(''),
-      campus: new FormControl(''),
-      major: new FormControl(''),
-      semester: new FormControl('')
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      code: new FormControl('', Validators.required),
+      campus: new FormControl('', Validators.required),
+      major: new FormControl('', Validators.required),
+      semester: new FormControl('', Validators.required)
     }),
     hacker4: new FormGroup({
-      name: new FormControl(''),
-      address: new FormControl(''),
-      phone: new FormControl(''),
-      code: new FormControl(''),
-      campus: new FormControl(''),
-      major: new FormControl(''),
-      semester: new FormControl('')
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      code: new FormControl('', Validators.required),
+      campus: new FormControl('', Validators.required),
+      major: new FormControl('', Validators.required),
+      semester: new FormControl('', Validators.required)
     }),
     hacker5: new FormGroup({
-      name: new FormControl(''),
-      address: new FormControl(''),
-      phone: new FormControl(''),
-      code: new FormControl(''),
-      campus: new FormControl(''),
-      major: new FormControl(''),
-      semester: new FormControl('')
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      code: new FormControl('', Validators.required),
+      campus: new FormControl('', Validators.required),
+      major: new FormControl('', Validators.required),
+      semester: new FormControl('', Validators.required)
     })
   });
 
@@ -117,11 +121,51 @@ export class RegistrationComponent implements OnInit {
   }
 
   continue(change: any): void{
+    if(change < this.step){
+      this.step = change;
+      return;
+    }
     if(this.teamInfo.controls.name.invalid && this.step == 1){
       this.nameFlag = true;
       return;
     }
     this.nameFlag = false;
+    if(this.teamInfo.controls.type.invalid && this.step == 2){
+      this.teamFlag = true;
+      return;
+    }
+    this.teamFlag = false;
+    if(this.teamInfo.controls.rank.invalid && this.step == 3){
+      this.rankFlag = true;
+      return;
+    }
+    this.rankFlag = false;
+    if(this.teamInfo.controls.hackerM.invalid && this.step == 4){
+      this.masterFlag = true;
+      return;
+    }
+    this.masterFlag = false;
+    if(this.teamInfo.controls.hacker2.invalid && this.step == 5){
+      this.h2Flag = true;
+      return;
+    }
+    this.h2Flag = false;
+    if(this.teamInfo.controls.hacker3.invalid && this.step == 6){
+      this.h3Flag = true;
+      return;
+    }
+    this.h3Flag = false;
+    if(this.teamInfo.controls.hacker4.invalid && this.step == 7){
+      this.h4Flag = true;
+      return;
+    }
+    this.h4Flag = false;
+    if(this.teamInfo.controls.hacker5.invalid && this.step == 8){
+      this.h5Flag = true;
+      return;
+    }
+    this.h5Flag = false;
+
     this.step = change;
   }
 
