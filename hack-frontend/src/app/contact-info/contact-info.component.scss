@@ -1,0 +1,144 @@
+.contact{
+    background-color: #282238;
+    color: #fffffa;
+    height: 100vh;
+    margin: -10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+   
+}
+.textos{
+    background-color:#372e50;
+    border-radius: 35px;
+    display: flex;
+    height: 700px;
+    width: 1400px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+
+
+
+}
+.infos{
+    display: flex;
+    height: 550px;
+    width:700px ;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+
+
+
+
+}
+.box{
+    background-color: #282238;
+    padding: 20px;
+    height: 550px;
+    width: 450px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+
+
+
+
+
+}
+
+.forms{
+    width: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.buttons{
+    
+    overflow: hidden;
+    display: flex;
+    
+    flex-direction: column;
+    margin-top: 130px;
+}
+.info-button{
+    border-width: 3pt;
+    color: #fffffa;
+    border-color: #00af88;
+    background-color: #00af88;
+    border-radius: 45px;
+    height: 70px;
+    font-size: 23pt;
+    font-family: 'IBM Semibold';
+    margin-left: 20px;
+    width: 135px;
+}
+.title{
+    font-family: 'IBM Regular';
+    font-size: 40px;
+    line-height: 5px;
+    font-weight: 100;
+
+
+}
+.title1{
+    font-family: 'IBM Plex Sans Bold';
+    font-size: 70px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: 100;
+
+
+
+}
+.text{
+    font-family: 'IBM Regular';
+    font-size: 25px;
+    margin-top: -5px;
+    margin-bottom: 60PX;
+    overflow-wrap: break-word;
+
+
+}
+.text1{
+    font-family: 'IBM Plex Sans Bold';
+    font-size: 25px;
+    margin-top: -5px;
+    margin-bottom: 40PX;
+
+}
+.nombreclass{
+    background-color: #372e50;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    
+}
+.nombreclass1{
+    background-color: #372e50;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: none;
+}
+.nombreclass2{
+    background-color: #372e50;
+    width: 400px;
+    height: 180px;
+    border-radius: 5px;
+    box-shadow: none;
+}
