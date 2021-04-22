@@ -1,14 +1,11 @@
 .main{
     display: flex;
-    width: 100%;
     min-height: 100vh;
     background-color: whitesmoke;
     
 }
 .container {
     background-color: whitesmoke;
-    width: 100%;
-    margin-top: 10px;
     overflow: visible;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -20,7 +17,6 @@ mat-drawer{
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    margin-left: 50px;
 }
 
 .side-container{
@@ -30,15 +26,21 @@ mat-drawer{
     justify-content: space-evenly;
     align-items: flex-start;
     flex-direction: column;
+} 
+
+.side-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 form{
     height: fit-content;
-    width: 80%;
+    width: 100%;
     background-color: white;
     border-radius: 25px;
-    margin-left: 80px;
-    margin-right: 70px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .team-name{
@@ -51,13 +53,13 @@ form{
 
 .title{
     font-family: 'IBM Plex Sans Bold';
-    font-size: 50px;
+    font-size: 40px;
     margin: 70px 0 30px 0;
 }
 
 .instruction{
     font-family: 'IBM Semibold';
-    font-size: 30px;
+    font-size: 20px;
     width: 70%;
     text-align: center;
     margin-bottom: 50px;
@@ -131,14 +133,13 @@ mat-card{
 }
 
 mat-card-content{
-    overflow-x: hidden;
-    margin-top: 30px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
-
 .content{
-    margin-left: 19px;
-    margin-right: 19px;
+    margin-left: 10px;
+    margin-right: 10px;
     font-size: 15px;
     white-space: pre-wrap;
     text-align: center;
@@ -153,7 +154,7 @@ mat-radio-group{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 70%;
+    width: 100%;
 }
 
 .text-field{

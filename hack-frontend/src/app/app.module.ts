@@ -23,7 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LandingPageComponent,
-    TalksMentorsComponent
+    TalksMentorsComponent,
     RegistrationComponent,
     MainPageComponent
   ],
