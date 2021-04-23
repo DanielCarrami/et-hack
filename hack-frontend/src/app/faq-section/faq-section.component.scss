@@ -1,0 +1,22 @@
+.faq-background{
+    background-color: #282232;
+    color: #fffffa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.faq-header{
+    margin-bottom: 20px;
+}
+
+.green-box-icon{
+    margin-right: 10px;
+}
+
+.faq-header-text{
+    font-family: 'IBM Semibold';
+    font-size: 30px;
+}
