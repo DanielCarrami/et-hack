@@ -22,6 +22,7 @@ import { AboutHackComponent } from './about-hack/about-hack.component';
 import { FaqSectionComponent } from './faq-section/faq-section.component';
 import {MatExpansionModule} from '@angular/material/expansion'
 
+import { SponsorBannerComponent } from './sponsor-banner/sponsor-banner.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatExpansionModule} from '@angular/material/expansion'
     MainPageComponent,
     AboutHackComponent,
     FaqSectionComponent,
+    SponsorBannerComponent
   ],
   imports: [
     BrowserModule,
