@@ -1,0 +1,32 @@
+
+.banner{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: whitesmoke;
+
+}
+
+p{
+    margin-top: 50px;
+    font-family: 'IBM Regular';
+    font-size: 25px;
+    color: #5f577c;
+    align-self: center;
+}
+
+.sponsor-logos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+img{
+    width: 300px;
+}

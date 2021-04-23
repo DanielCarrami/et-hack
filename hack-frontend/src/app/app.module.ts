@@ -18,6 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SponsorBannerComponent } from './sponsor-banner/sponsor-banner.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LandingPageComponent,
     TalksMentorsComponent,
     RegistrationComponent,
-    MainPageComponent
+    MainPageComponent,
+    SponsorBannerComponent
   ],
   imports: [
     BrowserModule,
