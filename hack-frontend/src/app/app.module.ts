@@ -19,6 +19,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutHackComponent } from './about-hack/about-hack.component';
+import { FaqSectionComponent } from './faq-section/faq-section.component';
+import {MatExpansionModule} from '@angular/material/expansion'
+
 
 @NgModule({
   declarations: [
@@ -27,10 +30,12 @@ import { AboutHackComponent } from './about-hack/about-hack.component';
     TalksMentorsComponent,
     RegistrationComponent,
     MainPageComponent,
-    AboutHackComponent
+    AboutHackComponent,
+    FaqSectionComponent,
   ],
   imports: [
     BrowserModule,
+    MatExpansionModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatCardModule,
