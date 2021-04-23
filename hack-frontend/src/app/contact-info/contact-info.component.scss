@@ -49,12 +49,6 @@
     justify-content: center;
     flex-direction: column;
 
-
-
-
-
-
-
 }
 
 .forms{
@@ -86,17 +80,16 @@
 }
 .title{
     font-family: 'IBM Regular';
-    font-size: 40px;
+    font-size: 30px;
     line-height: 5px;
     font-weight: 100;
-
+    margin-bottom: 40px;
 
 }
 .title1{
     font-family: 'IBM Plex Sans Bold';
-    font-size: 70px;
-    margin: 0px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    margin-bottom: 20px;
     font-weight: 100;
 
 
@@ -104,8 +97,8 @@
 }
 .text{
     font-family: 'IBM Regular';
-    font-size: 25px;
-    margin-top: -5px;
+    font-size: 20px;
+    margin-top: 5px;
     margin-bottom: 60PX;
     overflow-wrap: break-word;
 
@@ -120,7 +113,7 @@
 }
 .nombreclass{
     background-color: #372e50;
-    
+    color: gainsboro;
     width: 400px;
     height: 30px;
     border-radius: 5px;
@@ -131,7 +124,7 @@
 }
 .nombreclass1{
     background-color: #372e50;
-   
+    color: gainsboro;
     width: 400px;
     height: 30px;
     border-radius: 5px;
@@ -141,7 +134,7 @@
 }
 .nombreclass2{
     background-color: #372e50;
-    
+    color: gainsboro;
     width: 400px;
     height: 180px;
     border-radius: 5px;
