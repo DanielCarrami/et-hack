@@ -25,6 +25,7 @@ import {MatExpansionModule} from '@angular/material/expansion'
 import { SponsorBannerComponent } from './sponsor-banner/sponsor-banner.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { TopicsComponent } from './topics/topics.component';
+import { TalksDetailsComponent } from './talks-details/talks-details.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TopicsComponent } from './topics/topics.component';
     FaqSectionComponent,
     SponsorBannerComponent,
     ContactInfoComponent,
-    TopicsComponent
+    TopicsComponent,
+    TalksDetailsComponent
   ],
   imports: [
     BrowserModule,
