@@ -24,6 +24,7 @@ import {MatExpansionModule} from '@angular/material/expansion'
 
 import { SponsorBannerComponent } from './sponsor-banner/sponsor-banner.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { TopicsComponent } from './topics/topics.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ContactInfoComponent } from './contact-info/contact-info.component';
     AboutHackComponent,
     FaqSectionComponent,
     SponsorBannerComponent,
-    ContactInfoComponent
+    ContactInfoComponent,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,
