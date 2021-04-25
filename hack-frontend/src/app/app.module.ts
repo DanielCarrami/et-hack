@@ -25,7 +25,9 @@ import {MatExpansionModule} from '@angular/material/expansion'
 import { SponsorBannerComponent } from './sponsor-banner/sponsor-banner.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { TopicsComponent } from './topics/topics.component';
-import { TalksDetailsComponent } from './talks-details/talks-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TalksDetailsComponent } from './modals/talks-details/talks-details.component';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { TalksDetailsComponent } from './talks-details/talks-details.component';
     MatIconModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
