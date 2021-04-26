@@ -12,8 +12,11 @@
 }
 
 mat-drawer{
-    height: 450px;
+    height: 550px;
+    width: 250px;
     display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
@@ -22,6 +25,8 @@ mat-drawer{
 .side-container{
     height: 100%;
     display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: white;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -83,6 +88,17 @@ form{
     font-family: 'IBM Semibold';
     text-align: center;
     font-size: 40px;
+}
+
+mat-select{
+    min-height: 60px;
+    min-width: 250px;
+    border-radius: 10px;
+    border: transparent;
+    align-self: center;
+    background-color: whitesmoke;
+    font-family: 'IBM Semibold';
+    padding-left: 20px;
 }
 
 .continue{
@@ -196,4 +212,22 @@ mat-radio-group{
 .text-danger{
     font: 'IBM Semibold';
     color: red;
+}
+
+
+.activated{
+    margin-bottom: 17px;  
+    margin-right: 10px;
+    fill:#00AF88;
+}
+
+.deactivated {
+    color: blue;
+    margin-bottom: 17px; 
+    margin-right: 10px;
+    fill:#5f577c;
+}
+
+.button-deactivated{
+    color: #9084bd;
 }

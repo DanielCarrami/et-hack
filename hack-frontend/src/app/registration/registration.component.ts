@@ -32,6 +32,21 @@ export class RegistrationComponent implements OnInit {
     {name: "Mixto", icon: "assets/images/mixto.png", description: "Equipo de Hackers locales y externos", size: "125px"}
   ]
 
+  semester = [
+    {value: '1', view: 'Primero'},
+    {value: '2', view: 'Segundo'},
+    {value: '3', view: 'Tercero'},
+    {value: '4', view: 'Cuarto'},
+    {value: '5', view: 'Quinto'},
+    {value: '6', view: 'Sexto'},
+    {value: '7', view: 'Septimo'},
+    {value: '8', view: 'Octavo'},
+    {value: '9', view: 'Noveno'},
+    {value: '10', view: 'Decimo'},
+    {value: '11', view: 'Onceavo'},
+    {value: '12', view: 'Otro O_o'},
+  ]
+
   teamInfo = new FormGroup({
     name: new FormControl('', Validators.required),
     team_type: new FormControl('', Validators.required),
@@ -39,8 +54,8 @@ export class RegistrationComponent implements OnInit {
     status: new FormControl(false) ,
     hackerM: new FormGroup({
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      phone: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.email, Validators.required]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{6,}')]),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
@@ -49,7 +64,7 @@ export class RegistrationComponent implements OnInit {
     }),
     hacker2: new FormGroup({
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.email, Validators.required]),
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
@@ -59,7 +74,7 @@ export class RegistrationComponent implements OnInit {
     }),
     hacker3: new FormGroup({
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.email, Validators.required]),
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
@@ -69,7 +84,7 @@ export class RegistrationComponent implements OnInit {
     }),
     hacker4: new FormGroup({
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.email, Validators.required]),
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
@@ -79,7 +94,7 @@ export class RegistrationComponent implements OnInit {
     }),
     hacker5: new FormGroup({
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.email, Validators.required]),
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),

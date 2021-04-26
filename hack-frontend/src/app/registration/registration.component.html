@@ -2,66 +2,121 @@
 <mat-drawer-container class="container">
     <mat-drawer mode="side" opened>
         <div class="side-container">
-            <div>
+            
+            <div *ngIf="step == 1; else else1">
                 <button mat-button (click)="continue(1)">
-                <mat-icon style="margin-bottom: 17px;" svgIcon="text"></mat-icon>
-                    Nombre del Equipo
-                </button>
+                    <mat-icon  class="activated" svgIcon="text" ></mat-icon>
+                        Nombre del Equipo
+                    </button>
             </div>
-            <div>
-                <button mat-button (click)="continue(2)">
-                    <mat-icon style="margin-bottom: 17px;" svgIcon="type"></mat-icon>
-                    Tipo de equipo
-                </button>
+            <ng-template #else1>
+                <button mat-button class="button-deactivated" (click)="continue(1)">
+                    <mat-icon class="deactivated" svgIcon="text"></mat-icon>
+                        Nombre del Equipo
+                    </button>
+            </ng-template>
+            <div *ngIf="step == 2; else else2">
+                    <button mat-button (click)="continue(2)">
+                        <mat-icon class="activated" svgIcon="type"></mat-icon>
+                        Tipo de equipo
+                    </button>
             </div>
-            <div>
+            <ng-template #else2>
+                    <button mat-button class="button-deactivated" (click)="continue(2)">
+                        <mat-icon class="deactivated" svgIcon="type"></mat-icon>
+                        Tipo de equipo
+                    </button>
+            </ng-template>
+            <div *ngIf="step == 3; else else3">
                 <button  mat-button (click)="continue(3)">
-                    <mat-icon style="margin-bottom: 17px;" svgIcon="rank"></mat-icon>
+                    <mat-icon class="activated" svgIcon="rank"></mat-icon>
                     Temática a seleccionar
                 </button>
             </div>
-            <div>
-                <button mat-button (click)="continue(4)">
-                    <mat-icon style="margin-bottom: 17px;" svgIcon="info"></mat-icon>
-                    Info de hackers
+            <ng-template #else3>
+                <button mat-button class="button-deactivated" (click)="continue(3)">
+                    <mat-icon class="deactivated" svgIcon="rank"></mat-icon>
+                    Temática a seleccionar
                 </button>
-                <div>
+            </ng-template>
+            <div>
+                <button mat-button (click)="continue(4)" class="button-deactivated">
+                    <mat-icon class="deactivated" svgIcon="info"></mat-icon>
+                    Info de hackers
+                </button> 
+                <div *ngIf="step == 4; else else4">
                     <button mat-button (click)="continue(4)" style="margin-left: 20px;">
-                        <mat-icon style="margin-bottom: 17px;" svgIcon="master"></mat-icon>
+                        <mat-icon class="activated" svgIcon="master"></mat-icon>
                         Hacker Master
                     </button>
                 </div>
-                <div>
+                <ng-template #else4>
+                    <button mat-button class="button-deactivated" (click)="continue(4)"  style="margin-left: 20px;">
+                        <mat-icon class="deactivated" svgIcon="master"></mat-icon>
+                        Hacker Master
+                    </button>
+                </ng-template>
+                <div *ngIf="step == 5; else else5">
                     <button mat-button (click)="continue(5)" style="margin-left: 20px;">
-                        <mat-icon style="margin-bottom: 17px;" svgIcon="hacker"></mat-icon>
+                        <mat-icon class="activated" svgIcon="hacker"></mat-icon>
                         Hacker 2
                     </button>
                 </div>
-                <div>
+                <ng-template #else5>
+                    <button mat-button class="button-deactivated" (click)="continue(5)"  style="margin-left: 20px;">
+                        <mat-icon class="deactivated" svgIcon="hacker"></mat-icon>
+                        Hacker 2
+                    </button>
+                </ng-template>
+                <div *ngIf="step == 6; else else6">
                     <button mat-button (click)="continue(6)" style="margin-left: 20px;">
-                        <mat-icon style="margin-bottom: 17px;" svgIcon="hacker"></mat-icon>
+                        <mat-icon class="activated" svgIcon="hacker"></mat-icon>
                         Hacker 3
                     </button>
                 </div>
-                <div>
+                <ng-template #else6>
+                    <button mat-button class="button-deactivated" (click)="continue(6)"  style="margin-left: 20px;">
+                        <mat-icon class="deactivated" svgIcon="hacker"></mat-icon>
+                        Hacker 3
+                    </button>
+                </ng-template>
+                <div *ngIf="step == 7; else else7">
                     <button mat-button (click)="continue(7)" style="margin-left: 20px;">
-                        <mat-icon style="margin-bottom: 17px;" svgIcon="hacker"></mat-icon>
+                        <mat-icon class="activated" svgIcon="hacker"></mat-icon>
                         Hacker 4
                     </button>
                 </div>
-                <div>
+                <ng-template #else7>
+                    <button mat-button class="button-deactivated" (click)="continue(7)"  style="margin-left: 20px;">
+                        <mat-icon class="deactivated" svgIcon="hacker"></mat-icon>
+                        Hacker 4
+                    </button>
+                </ng-template>
+                <div *ngIf="step == 8; else else8">
                     <button mat-button (click)="continue(8)" style="margin-left: 20px;">
-                        <mat-icon style="margin-bottom: 17px;" svgIcon="hacker"></mat-icon>
+                        <mat-icon class="activated" svgIcon="hacker"></mat-icon>
                         Hacker 5
                     </button>
                 </div>
+                <ng-template #else8>
+                    <button mat-button class="button-deactivated" (click)="continue(8)"  style="margin-left: 20px;">
+                        <mat-icon class="deactivated" svgIcon="hacker"></mat-icon>
+                        Hacker 5
+                    </button>
+                </ng-template>
             </div>
-            <div>
+            <div *ngIf="step == 9; else else9">
                 <button mat-button (click)="continue(9)">
-                    <mat-icon svgIcon="box"></mat-icon>
+                    <mat-icon svgIcon="almost"></mat-icon>
                     ¡Ya casi!
                 </button>
             </div>
+            <ng-template #else9>
+                <button mat-button class="button-deactivated" (click)="continue(9)">
+                    <mat-icon class="deactivated" svgIcon="hacker"></mat-icon>
+                    ¡Ya casi!
+                </button>
+            </ng-template>
     </div>
 </mat-drawer>
     <mat-drawer-content style="overflow: visible;">
@@ -132,7 +187,7 @@
                     </div>
                     <div class="form-field">
                         <label class="form-label">Dirección de correo electrónico*</label>
-                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                        <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
                         <label class="form-label">Número de teléfono*</label>
@@ -162,6 +217,13 @@
                         <div style="width: 50px;"></div>
                         <div class="form-field">
                             <label class="form-label">Semestre*</label>
+                            <!--
+                                <mat-select formControlName="semester" required>
+                                <mat-option *ngFor="let s of semester" [value]="s.value">
+                                    {{s.view}}
+                                </mat-option>
+                            </mat-select>
+                            -->
                             <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
@@ -181,7 +243,7 @@
                     </div>
                     <div class="form-field">
                         <label class="form-label">Dirección de correo electrónico*</label>
-                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                        <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
                         <label class="form-label">Discord ID*</label>
@@ -226,7 +288,7 @@
                     </div>
                     <div class="form-field">
                         <label class="form-label">Dirección de correo electrónico*</label>
-                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                        <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
                         <label class="form-label">Discord ID*</label>
@@ -271,7 +333,7 @@
                     </div>
                     <div class="form-field">
                         <label class="form-label">Dirección de correo electrónico*</label>
-                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                        <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
                         <label class="form-label">Discord ID*</label>
@@ -316,7 +378,7 @@
                     </div>
                     <div class="form-field">
                         <label class="form-label">Dirección de correo electrónico*</label>
-                        <input class="text-field" type="text" placeholder="example@domain.com*" formControlName="email">
+                        <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
                         <label class="form-label">Discord ID*</label>
@@ -342,6 +404,7 @@
                         <div style="width: 50px;"></div>
                         <div class="form-field">
                             <label class="form-label">Semestre*</label>
+
                             <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
