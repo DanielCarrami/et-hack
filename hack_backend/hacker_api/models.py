@@ -13,12 +13,13 @@ class Hacker(models.Model):
     semester = models.CharField(null=True, max_length=255)
 
     def __str__(self):
-        return '%s' % (self.name)
+        return '%s' % (self.email)
 
 class Team(models.Model):
     name = models.CharField(null=True, max_length=255)
     team_type = models.CharField(null=True, max_length=255)
     rank = models.CharField(null=True, max_length=255)
+    status = models.BooleanField(null=True, default=False)
     hackerM = models.OneToOneField(Hacker, on_delete=models.CASCADE, related_name="hackermaster")
     hacker2 = models.OneToOneField(Hacker, on_delete=models.CASCADE, related_name="hacker2")
     hacker3 = models.OneToOneField(Hacker, on_delete=models.CASCADE, related_name="hacker3")

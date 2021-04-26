@@ -36,6 +36,7 @@ export class RegistrationComponent implements OnInit {
     name: new FormControl('', Validators.required),
     team_type: new FormControl('', Validators.required),
     rank: new FormControl('', Validators.required),
+    status: new FormControl(false) ,
     hackerM: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
