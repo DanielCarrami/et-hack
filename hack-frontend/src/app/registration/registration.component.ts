@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Validators } from '@angular/forms';
+import { CrudService} from '../services/crud.service' ;
 
 @Component({
   selector: 'app-registration',
@@ -33,7 +34,7 @@ export class RegistrationComponent implements OnInit {
 
   teamInfo = new FormGroup({
     name: new FormControl('', Validators.required),
-    type: new FormControl('', Validators.required),
+    team_type: new FormControl('', Validators.required),
     rank: new FormControl('', Validators.required),
     hackerM: new FormGroup({
       name: new FormControl('', Validators.required),
@@ -42,49 +43,54 @@ export class RegistrationComponent implements OnInit {
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
-      major: new FormControl('', Validators.required),
+      program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
     hacker2: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
-      major: new FormControl('', Validators.required),
+      program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
     hacker3: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
-      major: new FormControl('', Validators.required),
+      program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
     hacker4: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
-      major: new FormControl('', Validators.required),
+      program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
     hacker5: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
-      major: new FormControl('', Validators.required),
+      program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     })
   });
 
   constructor(
     private matIconRegistry: MatIconRegistry,
+    private crudService: CrudService, 
     private domSanitizer: DomSanitizer
     ) { 
       this.matIconRegistry.addSvgIcon(
@@ -135,7 +141,7 @@ export class RegistrationComponent implements OnInit {
       return;
     }
     this.nameFlag = false;
-    if(this.teamInfo.controls.type.invalid && this.step == 2){
+    if(this.teamInfo.controls.team_type.invalid && this.step == 2){
       this.teamFlag = true;
       return;
     }
@@ -176,6 +182,7 @@ export class RegistrationComponent implements OnInit {
 
   submit(): void {
     console.log(this.teamInfo.value);
+    this.crudService.create(this.teamInfo.value);
   }
 
 }

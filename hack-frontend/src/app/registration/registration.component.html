@@ -82,7 +82,7 @@
             <div class="team-name" *ngIf="step == 2">
                 <label class="title">Tipo de equipo</label>
                     <label class="instruction">Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
-                    <mat-radio-group formControlName="type" class="asCard">
+                    <mat-radio-group formControlName="team_type" class="asCard">
                         <mat-radio-button *ngFor="let type of teamTypes" [value]="type.name">
                             <mat-card>
                                 <mat-card-content>
@@ -156,7 +156,7 @@
                     <div class="double-field">
                         <div class="form-field">
                             <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
@@ -201,7 +201,7 @@
                     <div class="double-field">
                         <div class="form-field">
                             <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
@@ -246,7 +246,7 @@
                     <div class="double-field">
                         <div class="form-field">
                             <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
@@ -291,7 +291,7 @@
                     <div class="double-field">
                         <div class="form-field">
                             <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
@@ -336,7 +336,7 @@
                     <div class="double-field">
                         <div class="form-field">
                             <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="major">
+                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
@@ -357,6 +357,10 @@
                 <div>
                     <label>Terminos y condiciones</label>
                     <input type="text" placeholder="Awesome_name_goes_here">
+                    <div class="button-rack">
+                        <button class="back" mat-button (click)="continue(8)">Regresar</button>
+                        <button class="continue" mat-button (click)="submit()">Registrarse</button>
+                    </div>
                 </div>
             </div>
             <pre>{{teamInfo.value | json}}</pre>
