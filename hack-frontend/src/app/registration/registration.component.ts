@@ -39,6 +39,7 @@ export class RegistrationComponent implements OnInit {
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
+      discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
       major: new FormControl('', Validators.required),
@@ -47,6 +48,7 @@ export class RegistrationComponent implements OnInit {
     hacker2: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
       major: new FormControl('', Validators.required),
@@ -55,6 +57,7 @@ export class RegistrationComponent implements OnInit {
     hacker3: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
       major: new FormControl('', Validators.required),
@@ -63,6 +66,7 @@ export class RegistrationComponent implements OnInit {
     hacker4: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
       major: new FormControl('', Validators.required),
@@ -71,6 +75,7 @@ export class RegistrationComponent implements OnInit {
     hacker5: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
+      discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
       campus: new FormControl('', Validators.required),
       major: new FormControl('', Validators.required),
