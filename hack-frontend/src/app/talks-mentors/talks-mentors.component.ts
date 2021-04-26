@@ -43,9 +43,9 @@ export class TalksMentorsComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TalksDetailsComponent, {
-      width: '250px',
-      backdropClass: 'custom-dialog-backdrop-class',
-      panelClass: 'custom-dialog-panel-class',
+      width: '1200px',
+      //backdropClass: 'custom-dialog-backdrop-class',
+      //panelClass: 'custom-dialog-panel-class',
       data: {
         pageValue: this.sendValue
       
