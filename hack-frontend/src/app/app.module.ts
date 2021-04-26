@@ -26,6 +26,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { SponsorBannerComponent } from './sponsor-banner/sponsor-banner.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { TopicsComponent } from './topics/topics.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TalksDetailsComponent } from './modals/talks-details/talks-details.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { TopicsComponent } from './topics/topics.component';
     FaqSectionComponent,
     SponsorBannerComponent,
     ContactInfoComponent,
-    TopicsComponent
+    TopicsComponent,
+    TalksDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,8 @@ import { TopicsComponent } from './topics/topics.component';
     MatIconModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
