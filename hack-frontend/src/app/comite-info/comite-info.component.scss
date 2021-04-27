@@ -1,0 +1,182 @@
+.main-container{
+    height: 100vh;
+    width: 100%;
+    background-color: white; 
+    display: flex;
+    flex-direction: row;
+}
+
+.cej{
+    background-color: yellow;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.information{
+    background-color: whitesmoke;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h4{
+    font-family: 'IBM Semibold';
+    font-size: 32px;
+    color: #5f577c;
+}
+
+h2{
+    font-family: 'IBM Plex Sans Bold';
+    font-size: 60px;
+}
+
+p{
+    font-family: 'IBM Regular';
+    font-size: 20px;
+}
+
+.text{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.social-links{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+}
+
+.social-img{
+    width: 60px;
+}
+
+
+
+.spinner-box{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+
+.fetec-logo{
+    width: 150px;
+    height: 150px;
+}
+
+#inner-orbit {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    animation: spin-right 10s linear infinite;
+}
+
+.crew-one{
+    width: 100px;
+    height: 100px;
+    animation: spin-left 10s linear infinite;
+}
+
+#second-orbit{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    animation: spin-right 10s linear infinite;
+}
+
+.crew-two{
+    width: 120px;
+    height: 120px;
+    animation: spin-left 10s linear infinite;
+}
+
+#third-orbit{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    animation: spin-left 17s linear infinite;
+}
+
+.crew-three{
+    width: 50px;
+    height: 50px;
+    animation: spin-right 17s linear infinite;
+}
+
+#fourth-orbit{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    animation: spin-left 17s linear infinite;
+}
+
+.crew-four{
+    width: 80px;
+    height: 80px;
+    animation: spin-right 17s linear infinite;
+}
+
+#fifth-orbit{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    animation: spin-left 17s linear infinite;
+}
+
+.crew-five{
+    width: 80px;
+    height: 80px;
+    animation: spin-right 17s linear infinite;
+}
+
+#sixth-orbit{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    animation: spin-left 17s linear infinite;
+}
+
+.crew-six{
+    width: 80px;
+    height: 80px;
+    animation: spin-right 17s linear infinite;
+}
+
+@keyframes spin-right {
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-left {
+    100% {
+      -webkit-transform: rotate(-360deg);
+      -moz-transform: rotate(-360deg);
+      -ms-transform: rotate(-360deg);
+      -o-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+    }
+  }
