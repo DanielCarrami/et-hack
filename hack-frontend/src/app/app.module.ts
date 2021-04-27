@@ -28,6 +28,7 @@ import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { TopicsComponent } from './topics/topics.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TalksDetailsComponent } from './modals/talks-details/talks-details.component';
+import { ComiteInfoComponent } from './comite-info/comite-info.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { TalksDetailsComponent } from './modals/talks-details/talks-details.comp
     SponsorBannerComponent,
     ContactInfoComponent,
     TopicsComponent,
-    TalksDetailsComponent
+    TalksDetailsComponent,
+    ComiteInfoComponent
   ],
   imports: [
     BrowserModule,

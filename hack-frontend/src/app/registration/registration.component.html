@@ -1,7 +1,7 @@
 <div class="main">
 <mat-drawer-container class="container">
     <mat-drawer mode="side" opened>
-        <div class="side-container">
+        <div class="side-container"> 
             
             <div *ngIf="step == 1; else else1">
                 <button mat-button (click)="continue(1)">
@@ -124,7 +124,7 @@
             <div class="team-name" *ngIf="step == 1">
                     <label class="title">Nombre del equipo</label>
                     <label class="instruction">Escribe el nombre de tu equipo</label>
-                    <mat-icon style="width: 20%; height: 20%; margin-bottom: 50px;" svgIcon="hacker-logo"></mat-icon>
+                    <mat-icon class="first-icon" svgIcon="hacker-logo"></mat-icon>
                     <input class="big-input" type="text" placeholder="Awesome_name_goes_here" formControlName="name" maxlength="40">
                     <span class="text-danger" *ngIf="nameFlag">No olvides escribir el nombre de tu equipo</span>
                     <label class="disclaimer">*Nombre inapropiados serán inapropiados</label>
@@ -202,7 +202,7 @@
                             <label class="form-label">Matrícula*</label>
                             <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
                         </div>
-                        <div style="width: 50px;"></div>
+                        <div class="hidden-block"></div>
                         <div class="form-field">
                             <label class="form-label">Campus*</label>
                             <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
@@ -214,7 +214,7 @@
                             <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
-                        <div style="width: 50px;"></div>
+                        <div class="hidden-block"></div>
                         <div class="form-field">
                             <label class="form-label">Semestre*</label>
                             <!--
@@ -426,7 +426,10 @@
                     </div>
                 </div>
             </div>
-            <pre>{{teamInfo.value | json}}</pre>
+            <!--
+                <pre>{{teamInfo.value | json}}</pre>
+            -->
+            
         </form>
     </mat-drawer-content>
 </mat-drawer-container>
