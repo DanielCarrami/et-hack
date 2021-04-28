@@ -1,22 +1,57 @@
 .faq-background{
-    background-color: #282232;
+    background-color: #372e50;
     color: #fffffa;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .faq-header{
     margin-bottom: 20px;
+    align-self: flex-start;
 }
 
-.green-box-icon{
-    margin-right: 10px;
+.faq-container{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+mat-panel-title{
+    color: #fff; 
+    font-family: 'IBM Semibold'; 
+    display: flex; 
+    align-items: center; 
+    font-size: 20px;
+    width: 100%;
+}
+
+mat-expansion-panel{
+    border-radius: 0px; 
+    border-bottom: 1px solid #fff; 
+    background-color: #372e50;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .faq-header-text{
     font-family: 'IBM Semibold';
-    font-size: 30px;
+    font-size: 40px;
+}
+.arrow{
+    transition: 1s;
+    transform: rotate(0deg);
+    margin-right: 20px;
+    margin-left: 10px;
+    overflow: visible;
+}
+
+.respuesta{
+    color: #fff; 
+    font-family: 'IBM Regular';
+    margin-left: 40px;
+    font-size: 17px;
 }

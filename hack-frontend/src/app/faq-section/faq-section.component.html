@@ -5,15 +5,18 @@
         </div>
         <div class="question-box">
             <mat-accordion>
-                <mat-expansion-panel hideToggle style="border-radius: 0px; border-bottom: 1px solid #fff; background-color: #282232;" *ngFor="let item of lista">
-                  <mat-expansion-panel-header style="background-color: #282232; width: 1000px;">
-                    <mat-panel-title style="color: #fff; font-family: 'IBM Semibold'; display: flex; align-items: center;">
-                        <img src="assets/images/green_box_icon.png" alt="green_box_icon.png" class="green-box-icon">
+
+                <mat-expansion-panel hideToggle
+                *ngFor="let item of lista" (opened)="item.open = true" (closed)="item.open = false">
+
+                  <mat-expansion-panel-header style="background-color: #372e50;">
+                    <mat-panel-title>
+                        <mat-icon [@openClose]="item.open? 'open' : 'closed'" class="arrow" svgIcon="arrow"></mat-icon>
                         {{item.pregunta}}
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                    <div style="display: flex; overflow-wrap: break-word; width: 1000px;">
-                        <p style="color: #fff; font-family: 'IBM Regular';">{{item.respuesta}}</p>
+                    <div style="display: flex; overflow-wrap: break-word;">
+                        <p class="respuesta">{{item.respuesta}}</p>
                     </div>
                   </mat-expansion-panel>
               </mat-accordion>
