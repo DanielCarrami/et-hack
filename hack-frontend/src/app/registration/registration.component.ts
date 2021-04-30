@@ -20,7 +20,8 @@ export class RegistrationComponent implements OnInit {
   h3Flag: boolean = false;
   h4Flag: boolean = false;
   h5Flag: boolean = false;
-
+  externalFlag: boolean = false;
+  
   ranks = [
     {name: "Concientizacion", icon: "assets/images/consiencia.png"},
     {name: "Manejo de residuos", icon: "assets/images/mask.png"}
