@@ -2,14 +2,13 @@
 .mentors-background{
     background-color: #ffffff;
     color: #372e50;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
 }
-
 
 // GENERAL TEXT
 .subtitle{
