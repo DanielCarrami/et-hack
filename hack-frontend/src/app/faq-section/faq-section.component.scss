@@ -27,6 +27,7 @@ mat-expansion-panel{
 }
 .arrow{
     transition: 1s;
+    display: flex;
     transform: rotate(0deg);
     margin-right: 20px;
     margin-left: 10px;
