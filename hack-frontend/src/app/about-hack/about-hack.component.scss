@@ -70,7 +70,7 @@
         flex-direction: column;
         justify-content: center;
     }
-
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -83,5 +83,9 @@
         margin-top: 30px;
         flex-direction: column;
         justify-content: center;
+    }
+    .main-container{
+        margin-top: 20px;   
+        margin-bottom: 20px;
     }
 }
