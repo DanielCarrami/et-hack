@@ -4,6 +4,7 @@ import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Validators } from '@angular/forms';
 import { CrudService} from '../services/crud.service' ;
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-registration',
@@ -23,9 +24,9 @@ export class RegistrationComponent implements OnInit {
   externalFlag: boolean = false;
 
   ranks = [
-    {name: "Concientizacion", icon: "assets/images/consiencia.png", show: true},
-    {name: "Manejo de residuos", icon: "assets/images/mask.png", show: true},
-    {name: "Campus tu casa", icon: "assets/images/home_icon.png", show: true}
+    {name: "Transporte", icon: "assets/images/consiencia.png", show: true},
+    {name: "Agua", icon: "assets/images/mask.png", show: true},
+    {name: "Contaminación Digital", icon: "assets/images/home_icon.png", show: true}
   ]
 
   teamTypes = [
@@ -107,6 +108,7 @@ export class RegistrationComponent implements OnInit {
   });
 
   constructor(
+    public dialog: MatDialog,
     private matIconRegistry: MatIconRegistry,
     private crudService: CrudService, 
     private domSanitizer: DomSanitizer
@@ -162,13 +164,6 @@ export class RegistrationComponent implements OnInit {
     if(this.teamInfo.controls.team_type.invalid && this.step == 2){
       this.teamFlag = true;
       return;
-    }
-    if(this.step == 2){
-      if(this.teamInfo.value.team_type !== "Local"){
-        this.ranks[2].show = false;
-      }else{
-        this.ranks[2].show = true;
-      }
     }
     
     this.teamFlag = false;

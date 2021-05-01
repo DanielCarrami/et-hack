@@ -29,6 +29,8 @@ import { TopicsComponent } from './topics/topics.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TalksDetailsComponent } from './modals/talks-details/talks-details.component';
 import { ComiteInfoComponent } from './comite-info/comite-info.component';
+import { FormSuccessComponent } from './modals/form-success/form-success.component';
+import { FormFailureComponent } from './modals/form-failure/form-failure.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { ComiteInfoComponent } from './comite-info/comite-info.component';
     ContactInfoComponent,
     TopicsComponent,
     TalksDetailsComponent,
-    ComiteInfoComponent
+    ComiteInfoComponent,
+    FormSuccessComponent,
+    FormFailureComponent
   ],
   imports: [
     BrowserModule,

@@ -162,7 +162,7 @@
                 <label class="instruction">Selecciona la temática en la que tu equipo desea participar</label>
                 <mat-radio-group class="asCard" formControlName="rank">
                     <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name">
-                        <mat-card *ngIf="rank.show">    
+                        <mat-card>    
                             <mat-card-content>
                                 <img src="{{rank.icon}}">
                             </mat-card-content>
