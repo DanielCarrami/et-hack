@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit} from '@angular/core';
+import { MatDialogRef} from '@angular/material/dialog';
 @Component({
   selector: 'app-form-success',
   templateUrl: './form-success.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormSuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<FormSuccessComponent>) { }
 
   ngOnInit(): void {
   }
 
+  closeDialog() {
+    this.dialogRef.close({ event: 'close' });
+  }
 }

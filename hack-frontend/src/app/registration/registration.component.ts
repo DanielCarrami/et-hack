@@ -4,8 +4,10 @@ import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Validators } from '@angular/forms';
 import { CrudService} from '../services/crud.service' ;
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import {FormSuccessComponent} from '../modals/form-success/form-success.component';
+import {FormFailureComponent} from '../modals/form-failure/form-failure.component';
 
 @Component({
   selector: 'app-registration',
@@ -175,6 +177,16 @@ export class RegistrationComponent implements OnInit {
     }
     this.rankFlag = false;
 
+    if(this.step == 2){
+      if(this.teamInfo.value.team_type !== "Local"){
+        this.externalFlag = true;
+        this.ranks[0].show = false;
+      }else{
+        this.externalFlag  = false;
+        this.ranks[0].show = true;
+      }
+    }
+    
     if(this.step == 3){
       if(this.teamInfo.value.team_type !== "Local"){
         this.externalFlag = true;
@@ -212,6 +224,8 @@ export class RegistrationComponent implements OnInit {
     this.step = change;
   }
 
+
+
   submit(): void {
     if(this.externalFlag){
       this.teamInfo.value.hackerM.campus = "NA";
@@ -221,16 +235,31 @@ export class RegistrationComponent implements OnInit {
       this.teamInfo.value.hacker5.campus = "NA";
     }
 
+    
     console.log(this.teamInfo.value);
     this.crudService.create(this.teamInfo.value).then(res =>{
       console.log("Success");
       //Open Success Dialog
+      this.openSuccesDialog()
+
     }).catch(err => {
-      //Open Error Dialog
+      this.openFailureDialog();
       console.log("Error " + err)
     }).finally(() => {
       this.router.navigate(['/registration'])
     }) ;
+  }
+
+  openSuccesDialog(): void {
+    const dialogRef = this.dialog.open(FormSuccessComponent, {
+      width: '500px'
+    });
+  }
+
+  openFailureDialog(): void {
+    const dialogRef = this.dialog.open(FormFailureComponent, {
+      width: '500px'
+    });
   }
 
 }

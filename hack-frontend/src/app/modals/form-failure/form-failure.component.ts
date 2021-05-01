@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form-failure',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormFailureComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<FormFailureComponent>) { }
 
   ngOnInit(): void {
   }
-
+  
+  closeDialog() {
+    this.dialogRef.close({ event: 'close' });
+  }
 }

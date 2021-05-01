@@ -1,0 +1,29 @@
+.title{
+    font-family: 'IBM Plex Sans Bold';
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.instruction{
+    font-family: 'IBM Semibold';
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.succes-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.continue{
+    background-color: #00af88;
+    border: #00af88;
+    border-radius: 35px;
+    height: 60px;
+    font-size: 13pt;
+    font-family: 'IBM Semibold';
+    color: #ffffff;
+    width: 135px;   
+}
