@@ -26,9 +26,11 @@
     "@ng-bootstrap/ng-bootstrap": "^9.1.0",
     "@popperjs/core": "^2.9.2",
     "angular-responsive-carousel": "^2.0.2",
+    "angularjs-toaster": "^3.0.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
+    "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.3"

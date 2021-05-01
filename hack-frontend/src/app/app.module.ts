@@ -31,7 +31,7 @@ import { TalksDetailsComponent } from './modals/talks-details/talks-details.comp
 import { ComiteInfoComponent } from './comite-info/comite-info.component';
 import { FormSuccessComponent } from './modals/form-success/form-success.component';
 import { FormFailureComponent } from './modals/form-failure/form-failure.component';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,8 @@ import { FormFailureComponent } from './modals/form-failure/form-failure.compone
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

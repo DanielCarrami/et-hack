@@ -37,7 +37,8 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "bootstrap/dist/css/bootstrap.min.css",
-              "bootstrap/dist/css/bootstrap.css"
+              "bootstrap/dist/css/bootstrap.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "jquery/dist/jquery.min.js",
