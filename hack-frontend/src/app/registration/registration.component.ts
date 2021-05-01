@@ -5,6 +5,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { Validators } from '@angular/forms';
 import { CrudService} from '../services/crud.service' ;
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -111,6 +112,7 @@ export class RegistrationComponent implements OnInit {
     public dialog: MatDialog,
     private matIconRegistry: MatIconRegistry,
     private crudService: CrudService, 
+    private router: Router,
     private domSanitizer: DomSanitizer
     ) { 
       this.matIconRegistry.addSvgIcon(
@@ -220,7 +222,15 @@ export class RegistrationComponent implements OnInit {
     }
 
     console.log(this.teamInfo.value);
-    this.crudService.create(this.teamInfo.value);
+    this.crudService.create(this.teamInfo.value).then(res =>{
+      console.log("Success");
+      //Open Success Dialog
+    }).catch(err => {
+      //Open Error Dialog
+      console.log("Error " + err)
+    }).finally(() => {
+      this.router.navigate(['/registration'])
+    }) ;
   }
 
 }
