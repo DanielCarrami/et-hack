@@ -13,7 +13,7 @@ export class CrudService {
   constructor(private http: HttpClient) { 
     this.URL = environment.baseUrl;
     this.headers = new HttpHeaders({
-      "Content-Type": "application/json"
+      "Content-Type": "application/x-www-form-urlencoded"
     });
   }
 
@@ -25,5 +25,10 @@ export class CrudService {
   create(body: any){
     let url = this.URL + "/api/team/";
     return axios.post(url, body)
+  }
+
+  send_mail(body: any){
+    let url = this.URL + "/api/sendmail/";
+    return axios.post(url,body)
   }
 }

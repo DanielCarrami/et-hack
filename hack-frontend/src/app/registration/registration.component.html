@@ -220,18 +220,12 @@
                         <div class="hidden-block"></div>
                         <div class="form-field">
                             <label class="form-label">Semestre*</label>
-                            <!--
-                                <mat-select formControlName="semester" required>
-                                <mat-option *ngFor="let s of semester" [value]="s.value">
-                                    {{s.view}}
-                                </mat-option>
-                            </mat-select>
-                            -->
+
                             <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
-                    <span class="text-danger" *ngIf="masterFlag">No olvides completar todos los campos</span>
+                    <span class="text-danger" *ngIf="masterFlag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
                         <button class="back" mat-button (click)="continue(3)">Regresar</button>
                         <button class="continue" mat-button (click)="continue(5)">Continuar</button>
@@ -280,7 +274,7 @@
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
-                    <span class="text-danger" *ngIf="h2Flag">No olvides completar todos los campos</span>
+                    <span class="text-danger" *ngIf="h2Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
                         <button class="back" mat-button (click)="continue(4)">Regresar</button>
                         <button class="continue" mat-button (click)="continue(6)">Continuar</button>
@@ -329,7 +323,7 @@
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
-                    <span class="text-danger" *ngIf="h3Flag">No olvides completar todos los campos</span>
+                    <span class="text-danger" *ngIf="h3Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
                         <button class="back" mat-button (click)="continue(5)">Regresar</button>
                         <button class="continue" mat-button (click)="continue(7)">Continuar</button>
@@ -378,7 +372,7 @@
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
-                    <span class="text-danger" *ngIf="h4Flag">No olvides completar todos los campos</span>
+                    <span class="text-danger" *ngIf="h4Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
                         <button class="back" mat-button (click)="continue(6)">Regresar</button>
                         <button class="continue" mat-button (click)="continue(8)">Continuar</button>
@@ -428,7 +422,7 @@
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
-                    <span class="text-danger" *ngIf="h5Flag">No olvides completar todos los campos</span>
+                    <span class="text-danger" *ngIf="h5Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
                         <button class="back" mat-button (click)="continue(7)">Regresar</button>
                         <button class="continue" mat-button (click)="continue(9)">Continuar</button>

@@ -6,5 +6,6 @@ router = routers.DefaultRouter()
 router.register(r'team', views.TeamViewSet, basename='teams')
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('sendmail/', views.sendmail, name="sendmail")
 ]
