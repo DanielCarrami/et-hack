@@ -107,7 +107,7 @@
             </div>
             <div *ngIf="step == 9; else else9">
                 <button mat-button (click)="continue(9)">
-                    <mat-icon svgIcon="almost"></mat-icon>
+                    <mat-icon class="activated" svgIcon="hacker"></mat-icon>
                     ¡Ya casi!
                 </button>
             </div>
@@ -132,7 +132,6 @@
                         <button class="back" mat-button routerLink="/">Regresar</button>
                         <button class="continue" mat-button (click)="continue(2)">Continuar</button>
                     </div>
- 
             </div>
             <div class="team-name" *ngIf="step == 2">
                 <label class="title">Tipo de equipo</label>
@@ -163,7 +162,7 @@
                 <label class="instruction">Selecciona la temática en la que tu equipo desea participar</label>
                 <mat-radio-group class="asCard" formControlName="rank">
                     <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name">
-                        <mat-card>    
+                        <mat-card *ngIf="rank.show">    
                             <mat-card-content>
                                 <img src="{{rank.icon}}">
                             </mat-card-content>
@@ -199,7 +198,7 @@
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
                         <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="discord">
+                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
@@ -255,7 +254,7 @@
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
                         <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="discord">
+                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
@@ -304,7 +303,7 @@
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
                         <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="discord">
+                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
@@ -353,7 +352,7 @@
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
                         <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="discord">
+                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
@@ -402,7 +401,7 @@
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
                         <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="discord">
+                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
@@ -449,7 +448,7 @@
             <!--
                 <pre>{{teamInfo.value | json}}</pre>
             -->
-            
+                
         </form>
     </mat-drawer-content>
 </mat-drawer-container>

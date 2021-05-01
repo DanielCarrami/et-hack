@@ -21,16 +21,17 @@ export class RegistrationComponent implements OnInit {
   h4Flag: boolean = false;
   h5Flag: boolean = false;
   externalFlag: boolean = false;
-  
+
   ranks = [
-    {name: "Concientizacion", icon: "assets/images/consiencia.png"},
-    {name: "Manejo de residuos", icon: "assets/images/mask.png"}
+    {name: "Concientizacion", icon: "assets/images/consiencia.png", show: true},
+    {name: "Manejo de residuos", icon: "assets/images/mask.png", show: true},
+    {name: "Campus tu casa", icon: "assets/images/home_icon.png", show: true}
   ]
 
   teamTypes = [
-    {name: "Local", icon: "assets/images/local.png", description: "Hackers inscritos en el sistema Tec.", size: "150px"},
-    {name: "Externo", icon: "assets/images/externo.png", description: "Hackers estudiantes fuera del sistema Tec", size: "125px"},
-    {name: "Mixto", icon: "assets/images/mixto.png", description: "Equipo de Hackers locales y externos", size: "125px"}
+    {name: "Local", icon: "assets/images/local.png", description: "Hackers inscritos en el sistema Tec.", size: "150px", showRank: true},
+    {name: "Externo", icon: "assets/images/externo.png", description: "Hackers estudiantes fuera del sistema Tec", size: "125px", showRank: false},
+    {name: "Mixto", icon: "assets/images/mixto.png", description: "Equipo de Hackers locales y externos", size: "125px", showRank: false}
   ]
 
   semester = [
@@ -59,7 +60,7 @@ export class RegistrationComponent implements OnInit {
       phone: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{6,}')]),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
-      campus: new FormControl('', Validators.required),
+      campus: new FormControl('',),
       program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
@@ -69,7 +70,7 @@ export class RegistrationComponent implements OnInit {
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
-      campus: new FormControl('', Validators.required),
+      campus: new FormControl(''),
       program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
@@ -79,7 +80,7 @@ export class RegistrationComponent implements OnInit {
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
-      campus: new FormControl('', Validators.required),
+      campus: new FormControl(''),
       program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
@@ -89,7 +90,7 @@ export class RegistrationComponent implements OnInit {
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
-      campus: new FormControl('', Validators.required),
+      campus: new FormControl(''),
       program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     }),
@@ -99,7 +100,7 @@ export class RegistrationComponent implements OnInit {
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
-      campus: new FormControl('', Validators.required),
+      campus: new FormControl(' '),
       program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     })
@@ -162,12 +163,29 @@ export class RegistrationComponent implements OnInit {
       this.teamFlag = true;
       return;
     }
+    if(this.step == 2){
+      if(this.teamInfo.value.team_type !== "Local"){
+        this.ranks[2].show = false;
+      }else{
+        this.ranks[2].show = true;
+      }
+    }
+    
     this.teamFlag = false;
     if(this.teamInfo.controls.rank.invalid && this.step == 3){
       this.rankFlag = true;
       return;
     }
     this.rankFlag = false;
+
+    if(this.step == 3){
+      if(this.teamInfo.value.team_type !== "Local"){
+        this.externalFlag = true;
+      }else{
+        this.externalFlag  = false;
+      }
+    }
+
     if(this.teamInfo.controls.hackerM.invalid && this.step == 4){
       this.masterFlag = true;
       return;
@@ -198,6 +216,14 @@ export class RegistrationComponent implements OnInit {
   }
 
   submit(): void {
+    if(this.externalFlag){
+      this.teamInfo.value.hackerM.campus = "NA";
+      this.teamInfo.value.hacker2.campus = "NA";
+      this.teamInfo.value.hacker3.campus = "NA";
+      this.teamInfo.value.hacker4.campus = "NA";
+      this.teamInfo.value.hacker5.campus = "NA";
+    }
+
     console.log(this.teamInfo.value);
     this.crudService.create(this.teamInfo.value);
   }
