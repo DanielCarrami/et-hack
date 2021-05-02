@@ -7,12 +7,9 @@ import { MatDialogRef} from '@angular/material/dialog';
 })
 export class FormSuccessComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<FormSuccessComponent>) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  closeDialog() {
-    this.dialogRef.close({ event: 'close' });
-  }
 }

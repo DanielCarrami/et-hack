@@ -1,13 +1,13 @@
 .title{
     font-family: 'IBM Plex Sans Bold';
-    font-size: 2.5em;
+    font-size: 3.5em;
     text-align: center;
 }
 
 .instruction{
     font-family: 'IBM Semibold';
-    font-size: 1.5em;
-    text-align: center;
+    font-size: 2em;
+    text-align: start;
 }
 
 .succes-container{
@@ -18,12 +18,84 @@
 }
 
 .continue{
-    background-color: #00af88;
-    border: #00af88;
+    margin-right: 10px;
+    border-color: #00af88;
+    color: #00af88;
+    border-style: solid;
     border-radius: 35px;
+    border-width: 4px;
     height: 60px;
     font-size: 13pt;
     font-family: 'IBM Semibold';
-    color: #ffffff;
-    width: 135px;   
+    margin-left: 20px;
+    width: 235px; 
+}
+
+.social-links{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+.social-img{
+    width: 60px;
+}
+.main{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.content-container{
+    padding-top: 100px;
+    height: 100%;
+    width: 80%;
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.team-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.second-container{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 100px;
+}
+
+.green-circle{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background-color: #00af88;
+    border-radius: 50%;
+}
+
+.information{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.more-text{
+    font-family: 'IBM Semibold';
+    font-size: 1.3em;
+    text-align: start;
+    color: #5f577c;
 }

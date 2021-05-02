@@ -229,10 +229,6 @@ export class RegistrationComponent implements OnInit {
 
 
   submitHackerForm(): void {
-    /*if(!this.isChecked){
-      this.termsFlag = true;
-      return;
-    }*/
 
     if(this.externalFlag){
       this.teamInfo.value.hackerM.campus = "NA";
@@ -246,23 +242,14 @@ export class RegistrationComponent implements OnInit {
     console.log(this.teamInfo.value);
     this.crudService.create(this.teamInfo.value).then(res =>{
       console.log("Success");
-      //Open Success Dialog
-      this.openSuccesDialog()
-      this.router.navigate(['/registration'])
+      this.router.navigate(['/registrationsuccess'])
 
     }).catch(err => {
       this.openFailureDialog();
-      this.router.navigate(['/registration'])
       console.log("Error " + err)
     }).finally(() => {
-      this.router.navigate(['/registration'])
+      this.router.navigate(['/registrationsuccess'])
     }) ;
-  }
-
-  openSuccesDialog(): void {
-    const dialogRef = this.dialog.open(FormSuccessComponent, {
-      width: '500px'
-    });
   }
 
   openFailureDialog(): void {
