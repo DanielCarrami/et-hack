@@ -7,7 +7,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { TalksMentorsComponent } from './talks-mentors/talks-mentors.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { PreventDoubleSubmitModule } from 'ngx-prevent-double-submission';
+ 
 import { RegistrationComponent } from './registration/registration.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -67,6 +68,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
+    PreventDoubleSubmitModule.forRoot(),
     ToastrModule.forRoot()
   ],
   providers: [],

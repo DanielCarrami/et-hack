@@ -137,7 +137,7 @@
 .instruction{
     font-family: 'IBM Semibold';
     font-size: 1.5em;
-    width: 70%;
+    width: 80%;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -286,3 +286,90 @@ mat-radio-group{
 .button-deactivated{
     color: #5f577c;
 }
+
+.terms-container{
+    background-color: whitesmoke;
+    width: 80%;
+    border-radius: 20px;
+    padding: 30px;
+    height: 250px;
+    font: 'IBM Regular';
+}
+
+.terms-container > p::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+.terms-container > p::-webkit-scrollbar-track {
+    background: whitesmoke;        /* color of the tracking area */
+}
+
+.terms-container > p::-webkit-scrollbar-thumb {
+    background-color: #5f577c;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid whitesmoke;  /* creates padding around scroll thumb */
+}
+
+.terms-container > p{
+    overflow-y: scroll;
+    height: 200px;
+    scrollbar-color: #5f577c whitesmoke; 
+    scrollbar-width: thin;  
+    font-family: 'IBM Regular';
+    color: #5f577c;
+}
+
+.terms-radio{
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    font-family: 'IBM Semibold';
+    cursor: pointer;
+    color: #5f577c;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.terms-radio input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.terms-radio:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.terms-radio input:checked ~ .checkmark {
+    background-color: #00AF88;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.terms-radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.terms-radio .checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: white;
+}
+  

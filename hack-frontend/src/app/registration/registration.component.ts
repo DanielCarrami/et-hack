@@ -241,9 +241,11 @@ export class RegistrationComponent implements OnInit {
       console.log("Success");
       //Open Success Dialog
       this.openSuccesDialog()
+      this.router.navigate(['/registration'])
 
     }).catch(err => {
       this.openFailureDialog();
+      this.router.navigate(['/registration'])
       console.log("Error " + err)
     }).finally(() => {
       this.router.navigate(['/registration'])

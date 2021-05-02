@@ -120,7 +120,7 @@
     </div>
 </mat-drawer>
     <mat-drawer-content style="overflow: visible;">
-        <form [formGroup]="teamInfo" (ngSubmit)="submit()">
+        <form name="registrationForm" [formGroup]="teamInfo" (ngSubmit)="submit()">
             <div class="team-name" *ngIf="step == 1">
                     <label class="title">Nombre del equipo</label>
                     <label class="instruction">Escribe el nombre de tu equipo</label>
@@ -128,8 +128,8 @@
                     <input class="big-input" type="text" placeholder="Awesome_name_goes_here" formControlName="name" maxlength="40">
                     <span class="text-danger" *ngIf="nameFlag">No olvides escribir el nombre de tu equipo</span>
                     <label class="disclaimer">*Nombre inapropiados serán inapropiados</label>
-                    <div class="button-rack">
-                        <button class="back" mat-button  routerLink="/" >Regresar</button>
+                    <div class="button-rack"> 
+                        <button class="back" routerLink="/">Regresar</button>
                         <button class="continue" mat-button (click)="continue(2)">Continuar</button>
                     </div>
             </div>
@@ -428,16 +428,26 @@
                         <button class="continue" mat-button (click)="continue(9)">Continuar</button>
                     </div>
             </div>
-            <div *ngIf="step == 9" class="team-name">
-                <h4>Ya Casi</h4>
-                <div>
-                    <label>Terminos y condiciones</label>
-                    <input type="text" placeholder="Awesome_name_goes_here">
+            <div *ngIf="step == 1" class="team-name">
+                <label class="title">¡Ya Casi!</label>
+                    <label class="instruction">Sabemos que nadie los lee, por eso te lo resumimos en que nos aseguramos que vivas la mejor experiencia.</label>
+                    <div class="terms-container">
+                        <p>
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                       
+                    </p>
+                    </div>
+                    <div class="terms-radio">
+                        <input type="radio" id="accept-terms" name="radio" value="accept-terms">
+                        <span class="checkmark"></span>
+                        <label for="accept-terms">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Acepto los términos y condiciones anteriores</label>
+                    </div>
+                    
                     <div class="button-rack">
                         <button class="back" mat-button (click)="continue(8)">Regresar</button>
-                        <button class="continue" mat-button (click)="submit()">Registrarse</button>
+                        <button class="continue" mat-button type="submit" (click)="submit()" prevent-double-submit>Registrarse</button>
                     </div>
-                </div>
             </div>
             <!--
                 <pre>{{teamInfo.value | json}}</pre>
