@@ -1,3 +1,64 @@
+.information{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.continue{
+    border-color: #00af88;
+    color: #00af88;
+    border-style: solid;
+    border-radius: 35px;
+    border-width: 4px;
+    height: 60px;
+    font-size: 13pt;
+    font-family: 'IBM Semibold';
+    width: 235px; 
+}
+
+.social-links{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+@media screen and (min-width: 900px ){
+    .content-container{
+        padding-top: 100px;
+        height: 100%;
+        width: 80%;
+        background-color: white;
+        border-radius: 25px;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+    }
+    .continue{
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content-container{
+        padding-top: 100px;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .information{
+        width: 100%;
+    }
+    .social-links{
+        width: 50%;
+        margin-bottom: 40px;
+    }
+}
+
 .title{
     font-family: 'IBM Plex Sans Bold';
     font-size: 3.5em;
@@ -17,26 +78,9 @@
     flex-direction: column;
 }
 
-.continue{
-    margin-right: 10px;
-    border-color: #00af88;
-    color: #00af88;
-    border-style: solid;
-    border-radius: 35px;
-    border-width: 4px;
-    height: 60px;
-    font-size: 13pt;
-    font-family: 'IBM Semibold';
-    margin-left: 20px;
-    width: 235px; 
-}
 
-.social-links{
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-}
+
+
 .social-img{
     width: 60px;
 }
@@ -48,18 +92,6 @@
     background-color: whitesmoke;
 }
 
-.content-container{
-    padding-top: 100px;
-    height: 100%;
-    width: 80%;
-    background-color: white;
-    border-radius: 25px;
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-}
 
 .team-name{
     display: flex;
@@ -71,6 +103,7 @@
 
 .second-container{
     width: 80%;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -86,12 +119,7 @@
     border-radius: 50%;
 }
 
-.information{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+
 
 .more-text{
     font-family: 'IBM Semibold';
