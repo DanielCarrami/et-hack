@@ -320,38 +320,34 @@ mat-radio-group{
 }
 
 .terms-radio{
+    
     margin-top: 20px;
-    display: block;
-    position: relative;
     font-family: 'IBM Semibold';
-    cursor: pointer;
     color: #5f577c;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .terms-radio input{
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    height: 0;
+    width: 100%;
 }
 
-.checkmark{
+.checkmark {
     position: absolute;
+	border-radius: 50%;
     height: 25px;
     width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-}
+    background-color: whitesmoke;
+  }
 
 .terms-radio:hover input ~ .checkmark {
     background-color: #ccc;
 }
 
 .terms-radio input:checked ~ .checkmark {
-    background-color: #00AF88;
+    background-color: whitesmoke;
 }
 
 .checkmark:after {
@@ -365,11 +361,11 @@ mat-radio-group{
 }
 
 .terms-radio .checkmark:after {
-    top: 9px;
-   left: 9px;
-   width: 8px;
-   height: 8px;
-   border-radius: 50%;
-   background: white;
+	width: 15px;
+	height: 15px;
+    top: 5px;
+    left: 5px;
+	border-radius: 50%;
+	background: #00af88;
 }
   
