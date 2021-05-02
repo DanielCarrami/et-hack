@@ -1,5 +1,5 @@
 <div class="main">
-<mat-drawer-container class="container">
+<mat-drawer-container class="container" >
     <mat-drawer mode="side" opened>
         <div class="side-container"> 
             
@@ -120,7 +120,7 @@
     </div>
 </mat-drawer>
     <mat-drawer-content style="overflow: visible;">
-        <form name="registrationForm" [formGroup]="teamInfo" (ngSubmit)="submit()">
+        <form name="registrationForm" [formGroup]="teamInfo">
             <div class="team-name" *ngIf="step == 1">
                     <label class="title">Nombre del equipo</label>
                     <label class="instruction">Escribe el nombre de tu equipo</label>
@@ -130,7 +130,7 @@
                     <label class="disclaimer">*Nombre inapropiados serán inapropiados</label>
                     <div class="button-rack"> 
                         <button class="back" routerLink="/">Regresar</button>
-                        <button class="continue" mat-button (click)="continue(2)">Continuar</button>
+                        <button class="continue" (click)="continue(2)">Continuar</button>
                     </div>
             </div>
             <div class="team-name" *ngIf="step == 2">
@@ -152,9 +152,9 @@
                     </mat-radio-group>
                     <span class="text-danger" *ngIf="teamFlag">No olvides escoger una opción</span>
                     <div class="button-rack">
-                        <button class="back" mat-button (click)="continue(1)">Regresar</button>
+                        <button class="back" (click)="continue(1)">Regresar</button>
  
-                        <button class="continue" mat-button (click)="continue(3)">Continuar</button>
+                        <button class="continue" (click)="continue(3)">Continuar</button>
                     </div>
             </div>
             <div class="team-name" *ngIf="step == 3">
@@ -172,9 +172,9 @@
                 </mat-radio-group>
                 <span class="text-danger" *ngIf="rankFlag">No olvides escoger una temática</span>
                 <div class="button-rack">
-                    <button class="back" mat-button (click)="continue(2)">Regresar</button>
+                    <button class="back" (click)="continue(2)">Regresar</button>
 
-                    <button class="continue" mat-button (click)="continue(4)">Continuar</button>
+                    <button class="continue" (click)="continue(4)">Continuar</button>
                 </div>
             </div>       
             <div *ngIf="step == 4" class="team-name" formGroupName="hackerM">
@@ -227,8 +227,8 @@
                     </div>
                     <span class="text-danger" *ngIf="masterFlag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
-                        <button class="back" mat-button (click)="continue(3)">Regresar</button>
-                        <button class="continue" mat-button (click)="continue(5)">Continuar</button>
+                        <button class="back" (click)="continue(3)">Regresar</button>
+                        <button class="continue" (click)="continue(5)">Continuar</button>
                     </div>
             </div>
             <div *ngIf="step == 5" class="team-name" formGroupName="hacker2">
@@ -276,8 +276,8 @@
                     </div>
                     <span class="text-danger" *ngIf="h2Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
-                        <button class="back" mat-button (click)="continue(4)">Regresar</button>
-                        <button class="continue" mat-button (click)="continue(6)">Continuar</button>
+                        <button class="back" (click)="continue(4)">Regresar</button>
+                        <button class="continue" (click)="continue(6)">Continuar</button>
                     </div>
             </div>
             <div *ngIf="step == 6" class="team-name" formGroupName="hacker3">
@@ -325,8 +325,8 @@
                     </div>
                     <span class="text-danger" *ngIf="h3Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
-                        <button class="back" mat-button (click)="continue(5)">Regresar</button>
-                        <button class="continue" mat-button (click)="continue(7)">Continuar</button>
+                        <button class="back" (click)="continue(5)">Regresar</button>
+                        <button class="continue" (click)="continue(7)">Continuar</button>
                     </div>
             </div>
             <div *ngIf="step == 7" class="team-name" formGroupName="hacker4">
@@ -374,8 +374,8 @@
                     </div>
                     <span class="text-danger" *ngIf="h4Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
-                        <button class="back" mat-button (click)="continue(6)">Regresar</button>
-                        <button class="continue" mat-button (click)="continue(8)">Continuar</button>
+                        <button class="back" (click)="continue(6)">Regresar</button>
+                        <button class="continue" (click)="continue(8)">Continuar</button>
                     </div>
             </div>
             <div *ngIf="step == 8" class="team-name" formGroupName="hacker5">
@@ -424,11 +424,11 @@
                     </div>
                     <span class="text-danger" *ngIf="h5Flag">No olvides completar todos los campos y que sean correctos</span>
                     <div class="button-rack">
-                        <button class="back" mat-button (click)="continue(7)">Regresar</button>
-                        <button class="continue" mat-button (click)="continue(9)">Continuar</button>
+                        <button class="back" (click)="continue(7)">Regresar</button>
+                        <button class="continue" (click)="continue(9)">Continuar</button>
                     </div>
             </div>
-            <div *ngIf="step == 1" class="team-name">
+            <div *ngIf="step == 9" class="team-name">
                 <label class="title">¡Ya Casi!</label>
                     <label class="instruction">Sabemos que nadie los lee, por eso te lo resumimos en que nos aseguramos que vivas la mejor experiencia.</label>
                     <div class="terms-container">
@@ -439,14 +439,15 @@
                     </div>
                     <div class="terms-radio">
                         <label>
-                        <input type="checkbox" id="accept-terms" name="radio" value="accept-terms">
+                        <input type="checkbox" id="accept-terms" name="radio">
                         <span class="checkmark"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acepto los términos y condiciones anteriores
                         </label>
                     </div>
+                    <span class="text-danger" *ngIf="termsFlag">No olvides aceptar los terminos y condiciones</span>
                     
                     <div class="button-rack">
-                        <button class="back" mat-button (click)="continue(8)">Regresar</button>
-                        <button class="continue" mat-button type="submit" (click)="submit()" prevent-double-submit>Registrarse</button>
+                        <button class="back" (click)="continue(8)">Regresar</button>
+                        <button class="continue" (click)="submitHackerForm()">Registrarse</button>
                     </div>
             </div>
             <!--

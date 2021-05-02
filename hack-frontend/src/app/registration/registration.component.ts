@@ -25,6 +25,8 @@ export class RegistrationComponent implements OnInit {
   h4Flag: boolean = false;
   h5Flag: boolean = false;
   externalFlag: boolean = false;
+  isChecked: boolean = false;
+  termsFlag: boolean = false;
 
   ranks = [
     {name: "Transporte", icon: "assets/images/consiencia.png", show: true},
@@ -104,7 +106,7 @@ export class RegistrationComponent implements OnInit {
       phone: new FormControl('0000000000'),
       discord: new FormControl('', Validators.required),
       code: new FormControl('', Validators.required),
-      campus: new FormControl(' '),
+      campus: new FormControl(''),
       program: new FormControl('', Validators.required),
       semester: new FormControl('', Validators.required)
     })
@@ -220,13 +222,18 @@ export class RegistrationComponent implements OnInit {
       return;
     }
     this.h5Flag = false;
-
+    console.log(this.isChecked);
     this.step = change;
   }
 
 
 
-  submit(): void {
+  submitHackerForm(): void {
+    /*if(!this.isChecked){
+      this.termsFlag = true;
+      return;
+    }*/
+
     if(this.externalFlag){
       this.teamInfo.value.hackerM.campus = "NA";
       this.teamInfo.value.hacker2.campus = "NA";

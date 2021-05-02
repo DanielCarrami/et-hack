@@ -70,6 +70,9 @@
     }
 }
 @media screen and (max-width: 600px) {
+    mat-card-content{
+        overflow-x: hidden;
+    }
     mat-drawer{
         width: 0px;
         border: transparent;
@@ -118,6 +121,7 @@
     min-height: 100vh;
     background-color: whitesmoke;
     
+
 }
 
 .side-button{
