@@ -1,0 +1,138 @@
+.background{
+    background-color: #5f577c;
+    color: #fffffa;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    flex-direction: column;
+}
+
+h3{
+    font-family: "IBM Regular";
+    animation-fill-mode: forwards;
+    animation: float 2s ease-in-out infinite;
+    animation-delay: 4s;
+    visibility: hidden;
+}
+
+.css-typing{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.css-typing h1 {
+    border-right: .15em solid white;
+    font-family: "IBM Plex Sans Bold";
+    font-size: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .css-typing h1:nth-child(1) {
+    width: 8.3em;
+    -webkit-animation: type 2s steps(40, end);
+    animation: type 2s steps(40, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  .css-typing h1:nth-child(2) {
+    width: 10.8em;
+    opacity: 0;
+    -webkit-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+    animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid white;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid white;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid white;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid white;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
+  }
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+        opacity: 0.1;
+        visibility: visible;
+	}
+	50% {
+		transform: translatey(-40px);
+        opacity: 1;
+        visibility: visible;
+	}
+	100% {
+		transform: translatey(0px);
+        opacity: 0.1;
+        visibility: visible;
+	}
+}

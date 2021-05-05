@@ -33,6 +33,7 @@ import { ComiteInfoComponent } from './comite-info/comite-info.component';
 import { FormSuccessComponent } from './modals/form-success/form-success.component';
 import { FormFailureComponent } from './modals/form-failure/form-failure.component';
 import { ToastrModule } from 'ngx-toastr';
+import { InitialAnimationComponent } from './initial-animation/initial-animation.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ToastrModule } from 'ngx-toastr';
     TalksDetailsComponent,
     ComiteInfoComponent,
     FormSuccessComponent,
-    FormFailureComponent
+    FormFailureComponent,
+    InitialAnimationComponent
   ],
   imports: [
     BrowserModule,
