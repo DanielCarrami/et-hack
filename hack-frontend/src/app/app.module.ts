@@ -34,6 +34,16 @@ import { FormSuccessComponent } from './modals/form-success/form-success.compone
 import { FormFailureComponent } from './modals/form-failure/form-failure.component';
 import { ToastrModule } from 'ngx-toastr';
 import { InitialAnimationComponent } from './initial-animation/initial-animation.component';
+import { LottieAnimationViewModule } from 'ng-lottie';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+ 
+// Note we need a separate function as it's required
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
+ 
 
 @NgModule({
   declarations: [
@@ -71,7 +81,8 @@ import { InitialAnimationComponent } from './initial-animation/initial-animation
     ReactiveFormsModule,
     MatDialogModule,
     PreventDoubleSubmitModule.forRoot(),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    LottieModule.forRoot({ player: playerFactory })
   ],
   providers: [],
   bootstrap: [AppComponent]

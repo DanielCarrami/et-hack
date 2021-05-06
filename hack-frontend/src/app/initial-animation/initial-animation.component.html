@@ -1,10 +1,22 @@
-<div class="background">
+<div (scroll)="doSomethingOnScroll($event)">
+
+
+<div class="background" >
+    
     <h3> </h3>
     <div class="css-typing">
         <h1>Toma_el_mando</h1>
         <h1>para_hacer_el_cambio</h1>
     </div>
-    <h3>&#60;Scroll Down&#62;</h3>
+    <h3>&#60;SCROLL DOWN&#62;</h3>
+
+</div>
+<div class="background"></div>
+<div *ngIf="isShown" style="background-color: #282238;">
+    <ng-lottie 
+        height="100vh"
+        [options]="options" 
+        (animationCreated)="animationCreated($event)"></ng-lottie>
 </div>
 
-
+</div>
