@@ -2,14 +2,15 @@
     .cej{
         overflow: hidden;
         width: 100%;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
+        
     }
     
     .information{
         background-color: whitesmoke;
-        max-width: 800px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -22,6 +23,69 @@
         flex-direction: row;
     }
 
+.cej-cascade{
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.cascade{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+}
+
+.cascade-list{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    animation: scroll 10s linear infinite;
+}
+
+.cascade-list2{
+    display: flex;
+    height: calc(250px * 4);
+    flex-direction: column;
+    animation: reverse-scroll 10s linear infinite;
+}
+
+.slide{
+    height: 300px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+img{
+    width: 100px;
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-490px * 2);
+    }
+}
+
+@keyframes reverse-scroll {
+    0%{
+        transform: translateY(-490px * 2);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 
 h4{
     font-family: 'IBM Semibold';
@@ -37,6 +101,7 @@ h2{
 p{
     font-family: 'IBM Regular';
     font-size: 20px;
+    text-align: justify;
 }
 
 .text{
@@ -59,10 +124,6 @@ p{
     width: 60px;
 }
 
-.slider{
-
-}
-
 .spinner-box{
     overflow: auto;
     width: 100%;
@@ -72,10 +133,6 @@ p{
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
-}
-
-@media screen and (min-width: 800px ){
-
 }
 
 
@@ -89,10 +146,9 @@ p{
         flex-wrap: wrap-reverse;
         flex-direction: row;
     }
-}
-
-@media screen and (min-width: 600px ){
-
+    .information{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -102,8 +158,11 @@ p{
         width: 100%;
         background-color: white; 
         display: flex;
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
         flex-direction: row;
+    }
+    .slide{
+        width: 150px;
     }
     .cej{
         background-color: yellow;
@@ -113,9 +172,15 @@ p{
         display: flex;
         align-items: center;
         justify-content: center;
+        display: none;
+    }
+    .information{
+        width: 100%;
     }
 
 }
+
+
 
 //ORBIT ANIMATION
 .fetec-logo{

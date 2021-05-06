@@ -1,6 +1,6 @@
 .contact-container{
     height: 100vh;
-    background-color: #372e50;
+    background-color: #282238;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,8 +12,8 @@
 }
 
 input{
-    background-color: #5f577c;
-    border: #5f577c;
+    background-color: #372e50;
+    border: #372e50;
     border-radius: 5px;
     margin-bottom: 10px;
     height: 35px;
@@ -46,14 +46,13 @@ input{
     }
     .contact-container{
         min-height: 100vh;
-        background-color: #372e50;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .contact-box{
         object-fit: contain;
-        background-color: #5f577c;
+        background-color: #372e50;
         width: 75%;
         min-height: 70%;
         border-radius: 50px;
@@ -94,7 +93,7 @@ form{
     width: 90%;
     align-items: center;
     justify-content: center;
-    background-color: #372e50;
+    background-color: #282238;
 }
 
     .contact-form{
@@ -117,8 +116,8 @@ form{
     width: 135px;
 }
 textarea{
-    background-color: #5f577c;
-    border: #5f577c;
+    background-color: #372e50;
+    border: #372e50;
     color: white;
     border-radius: 5px;
     margin-bottom: 0.5em;
@@ -130,7 +129,6 @@ textarea{
 @media screen and (max-width: 700px) {
     .contact-container{
         min-height: 180vh;
-        background-color: #372e50;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -145,7 +143,7 @@ textarea{
     }
 
     .contact-box{
-        background-color: #5f577c;
+        background-color: #372e50;
         width: 100%;
         border-radius: 50px;
         display: flex;
@@ -163,7 +161,7 @@ form{
     padding-bottom: 30px;
     align-items: center;
     justify-content: center;
-    background-color: #372e50;
+    background-color: #282238;
 }
 
     h3{
@@ -206,8 +204,8 @@ form{
     margin-top: 20px;
 } 
 textarea{
-    background-color: #5f577c;
-    border: #5f577c;
+    background-color: #372e50;
+    border: #372e50;
     color: white;
     border-radius: 5px;
     height: 30px;
