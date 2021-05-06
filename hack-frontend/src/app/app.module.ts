@@ -37,6 +37,7 @@ import { InitialAnimationComponent } from './initial-animation/initial-animation
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { InitialTransitionComponent } from './initial-transition/initial-transition.component';
  
 // Note we need a separate function as it's required
 // by the AOT compiler.
@@ -61,7 +62,8 @@ export function playerFactory() {
     ComiteInfoComponent,
     FormSuccessComponent,
     FormFailureComponent,
-    InitialAnimationComponent
+    InitialAnimationComponent,
+    InitialTransitionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
-import { Component,  ElementRef, ViewChild, OnInit, HostListener} from '@angular/core';
-import { AnimationItem } from 'lottie-web';
-import { AnimationOptions } from 'ngx-lottie';
+import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-initial-animation',
@@ -9,23 +8,8 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class InitialAnimationComponent implements OnInit {
   counter: number = 0;
-  options: AnimationOptions = {
-    path: '',
-    loop: false,
-  };
-  isShown: boolean = false;
-  
-  @HostListener("scroll", ['$event'])
-  doSomethingOnScroll($event:Event){
-    console.log("scroll: " + $event);
-  }
 
-  animationCreated(animationItem: AnimationItem): void {
-    console.log('Holaaa' + animationItem);
-    setTimeout(()=> this.isShown=false, 5000)
-  }
-
-  constructor() {}
+  constructor(private router: Router,) {}
 
    scroll = (event: any): void => {
     // Here scroll is a variable holding the anonymous function 
@@ -33,11 +17,9 @@ export class InitialAnimationComponent implements OnInit {
     // and removed onDestroy
     // To see what changed:
     this.counter++;
-    if(this.counter == 15){
-      this.isShown = true;
-      this.updateAnimation();
+    if(this.counter == 5){
+      this.router.navigate(['/enterthehacker'])
     }
-    const number = event.srcElement.scrollTop;
     console.log(event);
     console.log(event.srcElement);
     console.log('I am scrolling ' + this.counter);
@@ -51,16 +33,4 @@ export class InitialAnimationComponent implements OnInit {
     window.removeEventListener('scroll', this.scroll, true);
   }
 
-  updateAnimation(): void {
-    this.options = {
-      ...this.options,
-      path: '/assets/animation/tunel.json',
-      
-    };
-    this.gotoAnimation()
-  }
-
-  gotoAnimation() {
-    window.scroll(0, 1000);
-  }
 }
