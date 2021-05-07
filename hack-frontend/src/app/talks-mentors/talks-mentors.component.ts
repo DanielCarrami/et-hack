@@ -44,11 +44,10 @@ export class TalksMentorsComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(TalksDetailsComponent, {
       width: '1200px',
-      //backdropClass: 'custom-dialog-backdrop-class',
+      backdropClass: "bdrop",
       //panelClass: 'custom-dialog-panel-class',
       data: {
         pageValue: this.sendValue
-      
       }
     });
 

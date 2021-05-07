@@ -17,6 +17,10 @@
 *{
     margin: 0px;
 }
+.bdrop {
+    background-color: #282238;
+    opacity: 0.9 !important;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
