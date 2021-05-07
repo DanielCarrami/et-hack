@@ -16,7 +16,7 @@
     width: 100%;
     margin-bottom: 100px;
 }
-
+ 
 .box-container{
     display: flex;
     flex-direction: row;
@@ -24,22 +24,23 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
+    max-width: 1460px;
 }
 
 .box{
-    width: 350px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     background-color: #282232;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+    justify-content: flex-start;
+    padding: 40px;
     margin-bottom: 20px;
 }
 
 h1{
     font-family: 'IBM Semibold';
-    font-size: 20px;
+    font-size: 40pt;
     margin-top: 10px;
 }

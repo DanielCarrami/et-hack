@@ -182,10 +182,8 @@ export class RegistrationComponent implements OnInit {
     if(this.step == 2){
       if(this.teamInfo.value.team_type !== "Local"){
         this.externalFlag = true;
-        this.ranks[0].show = false;
       }else{
         this.externalFlag  = false;
-        this.ranks[0].show = true;
       }
     }
     
