@@ -25,7 +25,7 @@ export class InitialTransitionComponent implements OnInit {
     setTimeout(()=> {
       this.isShown=false;
       this.router.navigate(['/home'])
-    }, 4000)
+    }, 2500)
   }
 
   constructor(private router: Router) { }

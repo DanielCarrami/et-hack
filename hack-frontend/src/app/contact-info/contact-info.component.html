@@ -10,14 +10,16 @@
                 <h3 class="text two">
                     Mandanos un mensaje
                 </h3>
-                <div class="input-field">
-                    <input type="text" placeholder="Tu nombre" formControlName="message_name">
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Correo electrónico" formControlName="message_email">
-                </div>
-                <div class="input-field">
-                    <textarea  class="area" placeholder="En que te podemos ayudar" formControlName="message"></textarea>
+                <div class="fields">
+                    <div class="input-field">
+                        <input type="text" placeholder="Tu nombre" formControlName="message_name">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Correo electrónico" formControlName="message_email">
+                    </div>
+                    <div class="input-field">
+                        <textarea  class="area" placeholder="En que te podemos ayudar" formControlName="message"></textarea>
+                    </div>
                 </div>
                 <button  class="continue" (click)="sendMail()">¡Listo!</button>
             </form>
