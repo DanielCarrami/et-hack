@@ -29,9 +29,9 @@ export class RegistrationComponent implements OnInit {
   termsFlag: boolean = false;
 
   ranks = [
-    {name: "Transporte", icon: "assets/images/consiencia.png", show: true},
-    {name: "Agua", icon: "assets/images/mask.png", show: true},
-    {name: "Contaminación Digital", icon: "assets/images/home_icon.png", show: true}
+    {name: "Transporte", icon: "assets/images/transporte.png", show: true, width: '20px'},
+    {name: "Agua", icon: "assets/images/biengrifo.png", show: true, width: '20px'},
+    {name: "Contaminación Digital", icon: "assets/images/servidores.png", show: true, width: '20px'}
   ]
 
   teamTypes = [
@@ -180,18 +180,23 @@ export class RegistrationComponent implements OnInit {
     this.rankFlag = false;
 
     if(this.step == 2){
-      if(this.teamInfo.value.team_type !== "Local"){
+      if(this.teamInfo.value.team_type === "Externo"){
         this.externalFlag = true;
+        this.ranks[0].show = false;
+         
       }else{
         this.externalFlag  = false;
+        this.ranks[0].show = true;
       }
     }
     
     if(this.step == 3){
-      if(this.teamInfo.value.team_type !== "Local"){
+      if(this.teamInfo.value.team_type === "Externo"){
         this.externalFlag = true;
+        this.ranks[0].show = false;
       }else{
         this.externalFlag  = false;
+        this.ranks[0].show = true;
       }
     }
 
