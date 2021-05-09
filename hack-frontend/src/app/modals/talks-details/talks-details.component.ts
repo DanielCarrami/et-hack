@@ -11,12 +11,18 @@ export class TalksDetailsComponent implements OnInit {
 
   fromPage: string;
   //fromDialog: string;
+  mentorName: string;
+  description: string;
+  photo: string;
 
   constructor(public dialogRef: MatDialogRef<TalksDetailsComponent>,
     private router: Router,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.fromPage = data.pageValue;
+    this.mentorName = data.name;
+    this.description = data.description;
+    this.photo = data.photo
   }
 
   ngOnInit(): void {

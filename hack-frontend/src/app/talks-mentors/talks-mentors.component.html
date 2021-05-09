@@ -19,131 +19,63 @@
             <div class="mentors-section" style="align-items: center">
                 <div id="mentors-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
+                        <div class="carousel-item active" >
+                            <div class="row" *ngFor="let mentor of mentors_1">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
+                                        <img class="card-img-top" src="{{mentor.photo}}" alt="Card image cap">
                                         <div class="card-body">
                                             <div style="display: flex; align-items: center; justify-content:flex-start; 
                                             height: 80px;">
-                                                <h5 class="card-title">GitHub:<br>Your Toolbox</h5>
+                                                <h5 class="card-title">{{mentor.name}}</h5>
                                             </div>
-                                            <p class="card-text">Por Luis Flores Carpinteyro de</p>
+                                            <p class="card-text">Por {{mentor.person}} de</p>
                                             <div class="l-container">
-                                                <img class="logo-container" src="assets/images/tec logo.png" alt="Logo imagecap">
+                                                <img class="logo-container" src="{{mentor.logo}}" alt="Logo imagecap">
                                             </div>
-                                            <button (click)="onClick(1)" id="btn1">Conoce más ></button>
+                                            <button (click)="openDialog(mentor.name, mentor.person, mentor.description, mentor.photo, mentor.about_person)" id="btn1">Conoce más ></button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div> 
+                        <!-- 
+                            <div class="carousel-item">
+                            <div class="row" *ngFor="let mentor of mentors_2">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
+                                        <img class="card-img-top" src="{{mentor.photo}}" alt="Card image cap"> 
                                         <div class="card-body">
                                             <div style="display: flex; align-items: center; justify-content:flex-start; 
                                             height: 80px;">
-                                                <h5 class="card-title">Serie de Mindfulness</h5>
+                                                <h5 class="card-title">{{mentor.name}}</h5>
                                             </div>
-                                            <p class="card-text">Por Carlos Cisneros de</p>
+                                            <p class="card-text">Por {{mentor.person}} de</p>
                                             <div class="l-container">
-                                                <img class="logo-container" src="assets/images/ichi.png" alt="Logo imagecap">
+                                                <img class="logo-container" src="{{mentor.logo}}" alt="Logo imagecap">
                                             </div>
-                                            <button (click)="onClick(1)" id="btn1">Conoce más ></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <div style="display: flex; align-items: center; justify-content:flex-start; 
-                                            height: 80px;">
-                                                <h5 class="card-title">¿Cómo hacer un proyecto rentable y no morir en el intento?</h5>
-                                            </div>
-                                           
-                                            <p class="card-text">Por Roberto Quintero Vega de</p>
-                                            <div class="l-container">
-                                               <img class="logo-container" src="assets/images/enlacelogo.png" alt="Logo imagecap"> 
-                                            </div>
-                                            
-                                                                                        
-                                            <button (click)="onClick(2)" id="btn2">Conoce más ></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <div style="display: flex; align-items: center; justify-content:flex-start; 
-                                            height: 80px;">
-                                                <h5 class="card-title">Pool Pitch</h5>
-                                            </div>
-                                            <p class="card-text">Por Fory Sánchez de</p>
-                                            <div class="l-container">
-                                                <img class="logo-container" src="assets/images/logo2.png" alt="Logo imagecap">
-                                            </div>
-                                            
-                                            <button (click)="onClick(3)" id="btn3">Conoce más ></button>
+                                            <button (click)="openDialog(mentor.name, mentor.person, mentor.description, mentor.photo, mentor.about_person)" id="btn1">Conoce más ></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        -->
                         <div class="carousel-item">
-                            <div class="row">
+                            <div class="row" *ngFor="let mentor of mentors_3">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
+                                        <img class="card-img-top" src="{{mentor.photo}}" alt="Card image cap">
                                         <div class="card-body">
                                             <div style="display: flex; align-items: center; justify-content:flex-start; 
                                             height: 80px;">
-                                                <h5 class="card-title">Peleando Pierdes</h5>
+                                                <h5 class="card-title">{{mentor.name}}</h5>
                                             </div>
-                                            <p class="card-text">Por Raúl Howe Marañón de</p>
+                                            <p class="card-text">Por {{mentor.person}} de</p>
                                             <div class="l-container">
-                                                <img class="logo-container" src="assets/images/enlacelogo.png" alt="Logo imagecap">
+                                                <img class="logo-container" src="{{mentor.logo}}" alt="Logo imagecap">
                                             </div>
-                                            <button (click)="onClick(4)" id="btn4">Conoce más ></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <div style="display: flex; align-items: center; justify-content:flex-start; 
-                                            height: 80px;">
-                                                <h5 class="card-title">Eco Tie Dye</h5>
-                                            </div>
-                                            <p class="card-text">Por Estilo Lento de</p>
-                                            <div class="l-container">
-                                                <img class="logo-container" src="assets/images/enlacelogo.png" alt="Logo imagecap">
-                                            </div>
-                                            <button (click)="onClick(5)" id="btn5">Conoce más ></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Design Thinking<br>for hackers</h5>
-                                            <p class="card-text">Por Jeff Kisses de</p>
-                                            <img class="logo-container" src="assets/images/logo2.png" alt="Logo imagecap">
-                                            <button (click)="onClick(1)" id="btn1">Conoce más ></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/images/Sof.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick .</p>
-                                            <img class="logo-container" src="assets/images/logo2.png" alt="Logo imagecap">
-                                            <button (click)="onClick(6)" id="btn6">Conoce más ></button>
+                                            <button (click)="openDialog(mentor.name, mentor.person, mentor.description, mentor.photo, mentor.about_person)" id="btn1">Conoce más ></button>
                                         </div>
                                     </div>
                                 </div>

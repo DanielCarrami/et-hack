@@ -1,163 +1,28 @@
 <!-- talks.details.component.html -->
 
 <div class="talks-background" [ngSwitch]="fromPage">
-    
-    <!-- Speaker 'one' -->
-    <div class="modal-background" *ngSwitchCase="'one'">
+
+<div class="modal-background">
          
-        <!--INFOO-->
-        <div class="col">
-            <div class="info">
-                <h2>Design Thinking for hackers</h2>
-                
-                <mat-dialog-content>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat,Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                </mat-dialog-content>
+    <!--INFOO-->
+    <div class="col">
+        <div class="info">
+            <h2>{{mentorName}}</h2>
+            
+            <mat-dialog-content>
+                {{description}}
+            </mat-dialog-content>
 
-                <mat-dialog-actions>
-                    <button href="" class="continue" (click)="register()">¡Regístrate!</button>
-                    <button href="" class="back">Consulta la agenda</button>
-                </mat-dialog-actions>
-            </div>
+            <mat-dialog-actions>
+                <button href="" class="continue" (click)="register()">¡Regístrate!</button>
+            </mat-dialog-actions>
         </div>
-
-        <!--FOTOO-->
-        <div class="col">
-            <img src="../assets/images/joche.png" alt="Card image cap">
-        </div>
-
     </div>
 
-    <!-- Speaker 'two' -->
-    <div class="modal-background" *ngSwitchCase="'two'">
-        
-        <!--INFOO-->
-        <div class="col">
-            <div class="info">
-                <h2 mat-dialog-title>Design Thinking for hackers</h2>
-                
-                <mat-dialog-content>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat,Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                </mat-dialog-content>
-
-                <mat-dialog-actions>
-                    <button href="" class="continue" (click)="register()">¡Regístrate!</button>
-                    <button href="" class="back">Consulta la agenda</button>
-                </mat-dialog-actions>
-            </div>
-        </div>
-
-        <!--FOTOO-->
-        <div class="col">
-            <img src="../assets/images/Sof.png" alt="Card image cap">
-        </div>
-
+    <!--FOTOO-->
+    <div class="col">
+        <img src="{{photo}}" alt="Card image cap">
     </div>
 
-    <!-- Speaker 'three' -->
-    <div class="modal-background" *ngSwitchCase="'three'">
-        
-        <!--INFOO-->
-        <div class="col">
-            <div class="info">
-                <h2 mat-dialog-title>Design Thinking for hackers</h2>
-                
-                <mat-dialog-content>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat,Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                </mat-dialog-content>
-
-                <mat-dialog-actions>
-                    <button class="continue" (click)="register()">¡Regístrate!</button>
-                    <button class="back">Consulta la agenda</button>
-                </mat-dialog-actions>
-            </div>
-        </div>
-
-        <!--FOTOO-->
-        <div class="col">
-            <img src="../assets/images/Sandy.png" alt="Card image cap">
-        </div>
-
-    </div>
-
-    <!-- Speaker 'four' -->
-    <div class="modal-background" *ngSwitchCase="'four'">
-        
-        <!--INFOO-->
-        <div class="col">
-                <div class="info">
-                <h2 mat-dialog-title>Design Thinking for hackers</h2>
-                
-                <mat-dialog-content>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat,Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                </mat-dialog-content>
-
-                <mat-dialog-actions>
-                    <button class="continue" (click)="register()">¡Regístrate!</button>
-                    <button back="back">Consulta la agenda</button>
-                </mat-dialog-actions>
-            </div>
-        </div>
-
-        <!--FOTOO-->
-        <div class="col" >
-            <img src="../assets/images/Mike.png" alt="Card image cap">
-        </div>
-
-    </div>
-
-    <!-- Speaker 'five' -->
-    <div class="modal-background" *ngSwitchCase="'five'">
-        
-        <!--INFOO-->
-        <div class="col">
-            <div class="info">
-                <h2 mat-dialog-title>Design Thinking for hackers</h2>
-                
-                <mat-dialog-content>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat,Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                </mat-dialog-content>
-
-                <mat-dialog-actions>
-                    <button class="continue" (click)="register()">¡Regístrate!</button>
-                    <button class="back">Consulta la agenda</button>
-                </mat-dialog-actions>
-            </div>
-        </div>
-
-        <!--FOTOO-->
-        <div class="col" >
-            <img src="../assets/images/Dan.png" alt="Card image cap">
-        </div>
-
-    </div>
-
-    <!-- Speaker 'six' -->
-    <div class="modal-background" *ngSwitchCase="'six'">
-        
-        <!--INFOO-->
-        <div class="col">
-            <div class="info">
-                <h2 mat-dialog-title>Design Thinking for hackers</h2>
-                
-                <mat-dialog-content>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat,Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                </mat-dialog-content>
-
-                <mat-dialog-actions>
-                    <button class="continue" (click)="register()">¡Regístrate!</button>
-                    <button class="back">Consulta la agenda</button>
-                </mat-dialog-actions>
-            </div>
-        </div>
-
-        <!--FOTOO-->
-        <div class="col" >
-            <img src="../assets/images/Sof.png" alt="Card image cap">
-        </div>
-
-    </div>
-
-
-
+</div>
 </div>
