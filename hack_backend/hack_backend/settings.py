@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'import_export',
+    'django_reverse_admin',
     'rest_framework',
     'hacker_api'
 ]
@@ -84,6 +86,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#'default': {
+ #       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+  #      'NAME': 'et-hack',
+   #     'USER': 'et-hack',
+    #    'PASSWORD': 'et-password-safe934',
+     #   'HOST': 'db',
+      #  'PORT': 5432,
+    #}
 
 
 # Password validation
