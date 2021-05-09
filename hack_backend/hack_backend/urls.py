@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('ahdhcue729ebwew929389123wikdsix/', admin.site.urls),
     path('api/', include('hacker_api.urls'))
 ]
