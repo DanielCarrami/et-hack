@@ -26,7 +26,7 @@ SECRET_KEY = 'b9piajg4q-g50sgn19&odf)29wyhns=1fn5(a$w119i38&tvb&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost:4200','127.0.0.0:4200', 'localhost:8010','127.0.0.0:8010','localhost:80','127.0.0.0:80', '201.138.156.1', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'import_export',
-    'django_reverse_admin',
     'rest_framework',
     'hacker_api'
 ]
@@ -81,19 +80,16 @@ WSGI_APPLICATION = 'hack_backend.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'et-hack',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432, 
     }
 }
-#'default': {
- #       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-  #      'NAME': 'et-hack',
-   #     'USER': 'et-hack',
-    #    'PASSWORD': 'et-password-safe934',
-     #   'HOST': 'db',
-      #  'PORT': 5432,
-    #}
+
 
 
 # Password validation
@@ -116,7 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
-    "http://127.0.0.1:4200"
+    "http://127.0.0.1:4200",
+    "http://localhost:8010",
+    "http://127.0.0.1:8010"
 ]
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

@@ -1,0 +1,29 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=et-hack
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: hack_backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./hack_backend:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  angular:
+    build: hack-frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - web
+    links:
+      - web
+
