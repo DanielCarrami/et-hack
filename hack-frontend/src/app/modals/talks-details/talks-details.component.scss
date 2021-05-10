@@ -6,7 +6,8 @@
     height: 100%;
 }
 .talks-background{
-    border-radius: 500px;
+    height: 100%;
+    overflow-y: visible;
 }
 //when dialog opens
 .custom-dialog-backdrop-class{
@@ -21,8 +22,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-height: 100vh;
-    overflow: auto;
+    max-height: 100vh; 
+    overflow-y: hidden;
 }
 h2{
     font-family: 'IBM Plex Sans Bold';
@@ -48,7 +49,9 @@ mat-dialog-actions{
 
 @media screen and (min-width: 700px ){
     img{
-        max-width: 80%;
+        max-width: 100%;
+        height: 100%;
+        overflow-y: hidden;
         float:right;
     }
     .modal-background{

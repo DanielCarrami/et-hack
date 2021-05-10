@@ -26,7 +26,7 @@ SECRET_KEY = 'b9piajg4q-g50sgn19&odf)29wyhns=1fn5(a$w119i38&tvb&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost:4200','127.0.0.0:4200', 'localhost:8010','127.0.0.0:8010','localhost:80','127.0.0.0:80', '201.138.156.1', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -113,8 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://127.0.0.1:4200",
-    "http://localhost:8010",
-    "http://127.0.0.1:8010"
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "201.138.156.1"
 ]
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

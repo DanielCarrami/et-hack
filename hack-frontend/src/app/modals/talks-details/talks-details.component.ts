@@ -14,6 +14,8 @@ export class TalksDetailsComponent implements OnInit {
   mentorName: string;
   description: string;
   photo: string;
+  about:string;
+  person: string;
 
   constructor(public dialogRef: MatDialogRef<TalksDetailsComponent>,
     private router: Router,
@@ -22,7 +24,9 @@ export class TalksDetailsComponent implements OnInit {
     this.fromPage = data.pageValue;
     this.mentorName = data.name;
     this.description = data.description;
-    this.photo = data.photo
+    this.photo = data.photo;
+    this.about = data.about;
+    this.person = data.person;
   }
 
   ngOnInit(): void {
