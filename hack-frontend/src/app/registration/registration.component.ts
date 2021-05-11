@@ -29,9 +29,9 @@ export class RegistrationComponent implements OnInit {
   termsFlag: boolean = false;
 
   ranks = [
-    {name: "Transporte", icon: "assets/images/transporte.png", show: true, width: '20px'},
-    {name: "Agua", icon: "assets/images/biengrifo.png", show: true, width: '20px'},
-    {name: "Contaminación Digital", icon: "assets/images/servidores.png", show: true, width: '20px'}
+    {name: "Transporte", icon: "assets/images/transporte.png", show: true, width: '200px', height: '70px'},
+    {name: "Agua", icon: "assets/images/biengrifo.png", show: true, width: '180px', height: '100px'},
+    {name: "Contaminación Digital", icon: "assets/images/servidores.png", show: true, width: '150px', height: '100px'}
   ]
 
   teamTypes = [
@@ -250,9 +250,8 @@ export class RegistrationComponent implements OnInit {
     }).catch(err => {
       this.openFailureDialog();
       console.log("Error " + err)
-    }).finally(() => {
-      this.router.navigate(['/registrationsuccess'])
-    }) ;
+      this.router.navigate(['/home'])
+    });
   }
 
   openFailureDialog(): void {

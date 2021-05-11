@@ -163,8 +163,8 @@
                 <mat-radio-group class="asCard" formControlName="rank">
                     <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name" >
                         <mat-card *ngIf="rank.show">    
-                            <mat-card-content>
-                                    <img src="{{rank.icon}}">
+                            <mat-card-content >
+                                    <img [ngStyle]="{'width': rank.width, 'height': rank.height}" src="{{rank.icon}}">
                             </mat-card-content>
                             <mat-card-title>{{rank.name}}</mat-card-title>
                         </mat-card>
