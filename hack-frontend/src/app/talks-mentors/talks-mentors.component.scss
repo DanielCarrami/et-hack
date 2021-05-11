@@ -167,3 +167,10 @@ button{
 .carousel-item{
     width: 100%;
 }
+
+@media screen and(max-width: 600px){
+    .carousel-item{
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+}
