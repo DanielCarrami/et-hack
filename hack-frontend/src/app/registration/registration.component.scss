@@ -20,7 +20,7 @@
         flex-direction: column;
     } 
     .container {
-        background-color: whitesmoke; 
+        background-color: #faf8fb; 
         overflow: visible;
         margin-top: 100px;
         margin-bottom: 100px;
@@ -53,7 +53,7 @@
         border-radius: 100px;
         margin-bottom: 30px;
         border: transparent;
-        background-color: whitesmoke;
+        background-color: #faf8fb;
         font-family: 'IBM Semibold';
         text-align: center;
         font-size: 40px;
@@ -98,7 +98,7 @@
         border-radius: 100px;
         margin-bottom: 30px;
         border: transparent;
-        background-color: whitesmoke;
+        background-color: #faf8fb;
         font-family: 'IBM Semibold';
         text-align: center;
         font-size: 15px;
@@ -119,7 +119,7 @@
 .main{
     display: flex;
     min-height: 100vh;
-    background-color: whitesmoke;
+    background-color: #faf8fb;
     
 
 }
@@ -160,7 +160,7 @@ mat-select{
     border-radius: 10px;
     border: transparent;
     align-self: center;
-    background-color: whitesmoke;
+    background-color: #faf8fb;
     font-family: 'IBM Semibold';
     padding-left: 20px;
 }
@@ -244,7 +244,7 @@ mat-radio-group{
     min-width: 250px;
     border-radius: 10px;
     border: transparent;
-    background-color: whitesmoke;
+    background-color: #faf8fb;
     font-family: 'IBM Semibold';
     padding-left: 20px;
 }
@@ -270,9 +270,13 @@ mat-radio-group{
 
 .text-danger{
     font: 'IBM Semibold';
+    font-weight: bold;
     color: red;
 }
 
+.input-error {
+    color: #ef4263;
+}
 
 .activated{
     margin-bottom: 17px;  
@@ -291,7 +295,7 @@ mat-radio-group{
 }
 
 .terms-container{
-    background-color: whitesmoke;
+    background-color: #faf8fb;
     width: 80%;
     border-radius: 20px;
     padding: 30px;
@@ -304,19 +308,19 @@ mat-radio-group{
 }
   
 .terms-container > p::-webkit-scrollbar-track {
-    background: whitesmoke;        /* color of the tracking area */
+    background: #faf8fb;        /* color of the tracking area */
 }
 
 .terms-container > p::-webkit-scrollbar-thumb {
     background-color: #5f577c;    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid whitesmoke;  /* creates padding around scroll thumb */
+    border: 3px solid #faf8fb;  /* creates padding around scroll thumb */
 }
 
 .terms-container > p{
     overflow-y: scroll;
     height: 200px;
-    scrollbar-color: #5f577c whitesmoke; 
+    scrollbar-color: #5f577c #faf8fb; 
     scrollbar-width: thin;  
     font-family: 'IBM Regular';
     color: #5f577c;
@@ -342,7 +346,7 @@ mat-radio-group{
 	border-radius: 50%;
     height: 25px;
     width: 25px;
-    background-color: whitesmoke;
+    background-color: #faf8fb;
   }
 
 .terms-radio:hover input ~ .checkmark {
@@ -350,7 +354,7 @@ mat-radio-group{
 }
 
 .terms-radio input:checked ~ .checkmark {
-    background-color: whitesmoke;
+    background-color: #faf8fb;
 }
 
 .checkmark:after {

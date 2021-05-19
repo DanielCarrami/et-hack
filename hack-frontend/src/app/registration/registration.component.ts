@@ -28,6 +28,14 @@ export class RegistrationComponent implements OnInit {
   isChecked: boolean = false;
   termsFlag: boolean = false;
 
+  name: boolean = false;
+  email: boolean = false;
+  phone: boolean = false;
+  discord: boolean = false;
+  code: boolean = false;
+  program: boolean = false;
+  semester:  boolean = false;
+
   ranks = [
     {name: "Transporte", icon: "assets/images/transporte.png", show: true, width: '200px', height: '70px'},
     {name: "Agua", icon: "assets/images/biengrifo.png", show: true, width: '180px', height: '100px'},
@@ -38,21 +46,6 @@ export class RegistrationComponent implements OnInit {
     {name: "Local", icon: "assets/images/local.png", description: "Hackers inscritos en el sistema Tec.", size: "150px", showRank: true},
     {name: "Externo", icon: "assets/images/externo.png", description: "Hackers estudiantes fuera del sistema Tec", size: "125px", showRank: false},
     {name: "Mixto", icon: "assets/images/mixto.png", description: "Equipo de Hackers locales y externos", size: "125px", showRank: false}
-  ]
-
-  semester = [
-    {value: '1', view: 'Primero'},
-    {value: '2', view: 'Segundo'},
-    {value: '3', view: 'Tercero'},
-    {value: '4', view: 'Cuarto'},
-    {value: '5', view: 'Quinto'},
-    {value: '6', view: 'Sexto'},
-    {value: '7', view: 'Septimo'},
-    {value: '8', view: 'Octavo'},
-    {value: '9', view: 'Noveno'},
-    {value: '10', view: 'Decimo'},
-    {value: '11', view: 'Onceavo'},
-    {value: '12', view: 'Otro O_o'},
   ]
 
   teamInfo = new FormGroup({
@@ -158,6 +151,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   continue(change: any): void{
+    this.name = false; this.email = false; this.phone= false; this.discord=false; this.code = false; this.program = false; this.semester = false;
     if(change < this.step){
       this.step = change;
       return;
@@ -202,34 +196,63 @@ export class RegistrationComponent implements OnInit {
 
     if(this.teamInfo.controls.hackerM.invalid && this.step == 4){
       this.masterFlag = true;
+      if(this.teamInfo.get('hackerM.name')?.invalid){this.name=true}
+      if(this.teamInfo.get('hackerM.email')?.invalid){this.email=true}
+      if(this.teamInfo.get('hackerM.phone')?.invalid){this.phone=true}
+      if(this.teamInfo.get('hackerM.discord')?.invalid){this.discord=true}
+      if(this.teamInfo.get('hackerM.code')?.invalid){this.code=true}
+      if(this.teamInfo.get('hackerM.program')?.invalid){this.program=true}
+      if(this.teamInfo.get('hackerM.semester')?.invalid){this.semester=true}
       return;
     }
     this.masterFlag = false;
     if(this.teamInfo.controls.hacker2.invalid && this.step == 5){
+      if(this.teamInfo.get('hacker2.name')?.invalid){this.name=true}
+      if(this.teamInfo.get('hacker2.email')?.invalid){this.email=true}
+      if(this.teamInfo.get('hacker2.discord')?.invalid){this.discord=true}
+      if(this.teamInfo.get('hacker2.code')?.invalid){this.code=true}
+      if(this.teamInfo.get('hacker2.program')?.invalid){this.program=true}
+      if(this.teamInfo.get('hacker2.semester')?.invalid){this.semester=true}
       this.h2Flag = true;
       return;
     }
     this.h2Flag = false;
     if(this.teamInfo.controls.hacker3.invalid && this.step == 6){
+      if(this.teamInfo.get('hacker3.name')?.invalid){this.name=true}
+      if(this.teamInfo.get('hacker3.email')?.invalid){this.email=true}
+      if(this.teamInfo.get('hacker3.discord')?.invalid){this.discord=true}
+      if(this.teamInfo.get('hacker3.code')?.invalid){this.code=true}
+      if(this.teamInfo.get('hacker3.program')?.invalid){this.program=true}
+      if(this.teamInfo.get('hacker3.semester')?.invalid){this.semester=true}
       this.h3Flag = true;
       return;
     }
     this.h3Flag = false;
     if(this.teamInfo.controls.hacker4.invalid && this.step == 7){
+      if(this.teamInfo.get('hacker4.name')?.invalid){this.name=true}
+      if(this.teamInfo.get('hacker4.email')?.invalid){this.email=true}
+      if(this.teamInfo.get('hacker4.discord')?.invalid){this.discord=true}
+      if(this.teamInfo.get('hacker4.code')?.invalid){this.code=true}
+      if(this.teamInfo.get('hacker4.program')?.invalid){this.program=true}
+      if(this.teamInfo.get('hacker4.semester')?.invalid){this.semester=true}
       this.h4Flag = true;
       return;
     }
     this.h4Flag = false;
     if(this.teamInfo.controls.hacker5.invalid && this.step == 8){
+      if(this.teamInfo.get('hacker5.name')?.invalid){this.name=true}
+      if(this.teamInfo.get('hacker5.email')?.invalid){this.email=true}
+      if(this.teamInfo.get('hacker5.discord')?.invalid){this.discord=true}
+      if(this.teamInfo.get('hacker5.code')?.invalid){this.code=true}
+      if(this.teamInfo.get('hacker5.program')?.invalid){this.program=true}
+      if(this.teamInfo.get('hacker5.semester')?.invalid){this.semester=true}
       this.h5Flag = true;
       return;
     }
     this.h5Flag = false;
-    console.log(this.isChecked);
     this.step = change;
+    this.name = false; this.email = false; this.phone= false; this.discord=false; this.code = false; this.program = false; this.semester = false;
   }
-
-
 
   submitHackerForm(): void {
 

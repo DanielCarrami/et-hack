@@ -123,7 +123,8 @@
         <form name="registrationForm" [formGroup]="teamInfo">
             <div class="team-name" *ngIf="step == 1">
                     <label class="title">Nombre del equipo</label>
-                    <label class="instruction">Escribe el nombre de tu equipo</label>
+                    <label [ngClass]="{'input-error': nameFlag}" class="instruction">Escribe el nombre de tu equipo</label>
+    
                     <mat-icon class="first-icon" svgIcon="hacker-logo"></mat-icon>
                     <input class="big-input" type="text" placeholder="Awesome_name_goes_here" formControlName="name" maxlength="40">
                     <span class="text-danger" *ngIf="nameFlag">No olvides escribir el nombre de tu equipo</span>
@@ -135,7 +136,7 @@
             </div>
             <div class="team-name" *ngIf="step == 2">
                 <label class="title">Tipo de equipo</label>
-                    <label class="instruction">Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
+                    <label [ngClass]="{'input-error': teamFlag}" class="instruction">Selecciona la opción de acuerdo a cómo está conformado tu equipo</label>
                     <mat-radio-group formControlName="team_type" class="asCard">
                         <mat-radio-button *ngFor="let type of teamTypes" [value]="type.name">
                             <mat-card>
@@ -159,7 +160,7 @@
             </div>
             <div class="team-name" *ngIf="step == 3">
                 <label class="title">Temática a seleccionar</label>
-                <label class="instruction">Selecciona la temática en la que tu equipo desea participar</label>
+                <label [ngClass]="{'input-error': rankFlag}" class="instruction">Selecciona la temática en la que tu equipo desea participar</label>
                 <mat-radio-group class="asCard" formControlName="rank">
                     <mat-radio-button *ngFor="let rank of ranks" [value]="rank.name" >
                         <mat-card *ngIf="rank.show">    
@@ -181,47 +182,48 @@
                     <label class="title">Ready Hacker Master</label>
                     <label class="instruction">Ingresa tus datos generales y de contacto. A través del Hacker Master nos comunicaremos con tu equipo</label>
                     <div class="form-field">
-                        <label class="form-label">Nombre*</label>
-                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                        
+                        <label [ngClass]="{'input-error': name}" class="form-label">Nombre*</label>
+                        <input  class="text-field" type="text" placeholder="Nombre*" formControlName="name">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <label [ngClass]="{'input-error': email}" class="form-label">Dirección de correo electrónico*</label>
                         <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Número de teléfono*</label>
+                        <label [ngClass]="{'input-error': phone}" class="form-label">Número de teléfono*</label>
                         <input class="text-field" type="text" placeholder="10101010101010*" formControlName="phone">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Discord ID*</label>
-                        <input class="text-field" type="text" placeholder="amazingusername*" formControlName="discord">
+                        <label [ngClass]="{'input-error': discord}" class="form-label">Discord ID*</label>
+                        <input class="text-field" type="text" placeholder="discordID#1234*" formControlName="discord">
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
-                        <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
+                        <label [ngClass]="{'input-error': code}" class="form-label">Universidad/Institución de Estudios*</label>
+                        <input class="text-field" type="text" placeholder="Universidad/Institución de Estudios*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
-                            <label class="form-label">Matrícula*</label>
-                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                            <label [ngClass]="{'input-error': code}" class="form-label">Matrícula*</label>
+                            <input  class="text-field" type="text" placeholder="Matrícula*" formControlName="code">
                         </div>
                         <div class="hidden-block"></div>
                         <div class="form-field">
                             <label class="form-label">Campus*</label>
-                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                            <input class="text-field" type="text" placeholder="Campus*" formControlName="campus">
                         </div>
                     </div>
                     <div class="double-field">
                         <div class="form-field">
-                            <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
+                            <label [ngClass]="{'input-error': program}" class="form-label">Carrera*</label>
+                            <input  class="text-field" type="text" placeholder="Carrera*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div class="hidden-block"></div>
                         <div class="form-field">
-                            <label class="form-label">Semestre*</label>
+                            <label  [ngClass]="{'input-error': semester}" class="form-label">Semestre*</label>
 
-                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <input class="text-field" type="text" placeholder="Semestre*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
@@ -235,42 +237,42 @@
                 <label class="title">Ready Hacker 2</label>
                     <label class="instruction">Ingresa tus datos generales y de contacto.</label>
                     <div class="form-field">
-                        <label class="form-label">Nombre*</label>
-                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                        <label [ngClass]="{'input-error': name}" class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Nombre*" formControlName="name">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <label [ngClass]="{'input-error': email}" class="form-label">Dirección de correo electrónico*</label>
                         <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Discord ID*</label>
-                        <input class="text-field" type="text" placeholder="amazingusername*" formControlName="discord">
+                        <label [ngClass]="{'input-error': discord}" class="form-label">Discord ID*</label>
+                        <input class="text-field" type="text" placeholder="discordID#1234*" formControlName="discord">
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
-                        <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
+                        <label [ngClass]="{'input-error': code}" class="form-label">Universidad/Institución de Estudios*</label>
+                        <input class="text-field" type="text" placeholder="Universidad/Institución de Estudios*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
-                            <label class="form-label">Matrícula*</label>
-                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                            <label [ngClass]="{'input-error': code}" class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="Matrícula*" formControlName="code">
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
                             <label class="form-label">Campus*</label>
-                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                            <input class="text-field" type="text" placeholder="Campus*" formControlName="campus">
                         </div>
                     </div>
                     <div class="double-field">
                         <div class="form-field">
-                            <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
+                            <label [ngClass]="{'input-error': program}" class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="Carrera*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
-                            <label class="form-label">Semestre*</label>
-                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label [ngClass]="{'input-error': semester}" class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Semestre*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
@@ -284,42 +286,42 @@
                 <label class="title">Ready Hacker 3</label>
                     <label class="instruction">Ingresa tus datos generales y de contacto.</label>
                     <div class="form-field">
-                        <label class="form-label">Nombre*</label>
-                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                        <label [ngClass]="{'input-error': name}" class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Nombre*" formControlName="name">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <label [ngClass]="{'input-error': email}" class="form-label">Dirección de correo electrónico*</label>
                         <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Discord ID*</label>
-                        <input class="text-field" type="text" placeholder="amazingusername*" formControlName="discord">
+                        <label [ngClass]="{'input-error': discord}" class="form-label">Discord ID*</label>
+                        <input class="text-field" type="text" placeholder="discordID#1234*" formControlName="discord">
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
-                        <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
+                        <label [ngClass]="{'input-error': code}" class="form-label">Universidad/Institución de Estudios*</label>
+                        <input class="text-field" type="text" placeholder="Universidad/Institución de Estudios*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
-                            <label class="form-label">Matrícula*</label>
-                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                            <label [ngClass]="{'input-error': code}" class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="Matrícula*" formControlName="code">
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
                             <label class="form-label">Campus*</label>
-                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                            <input class="text-field" type="text" placeholder="Campus*" formControlName="campus">
                         </div>
                     </div>
                     <div class="double-field">
                         <div class="form-field">
-                            <label class="form-label">Carrera*</label>
+                            <label [ngClass]="{'input-error': program}" class="form-label">Carrera*</label>
                             <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
-                            <label class="form-label">Semestre*</label>
-                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label [ngClass]="{'input-error': semester}" class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Semestre*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
@@ -333,42 +335,42 @@
                 <label class="title">Ready Hacker 4</label>
                     <label class="instruction">Ingresa tus datos generales y de contacto.</label>
                     <div class="form-field">
-                        <label class="form-label">Nombre*</label>
-                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                        <label [ngClass]="{'input-error': name}" class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Nombre*" formControlName="name">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <label [ngClass]="{'input-error': email}" class="form-label">Dirección de correo electrónico*</label>
                         <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Discord ID*</label>
-                        <input class="text-field" type="text" placeholder="amazingusername*" formControlName="discord">
+                        <label [ngClass]="{'input-error': discord}" class="form-label">Discord ID*</label>
+                        <input class="text-field" type="text" placeholder="discordID#1234*" formControlName="discord">
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
-                        <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
+                        <label [ngClass]="{'input-error': code}" class="form-label">Universidad/Institución de Estudios*</label>
+                        <input class="text-field" type="text" placeholder="Universidad/Institución de Estudios*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
-                            <label class="form-label">Matrícula*</label>
-                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                            <label [ngClass]="{'input-error': code}" class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="Matrícula*" formControlName="code">
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
                             <label class="form-label">Campus*</label>
-                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                            <input class="text-field" type="text" placeholder="Campus*" formControlName="campus">
                         </div>
                     </div>
                     <div class="double-field">
                         <div class="form-field">
-                            <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
+                            <label [ngClass]="{'input-error': program}" class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="Carrrera*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
-                            <label class="form-label">Semestre*</label>
-                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <label [ngClass]="{'input-error': semester}" class="form-label">Semestre*</label>
+                            <input class="text-field" type="text" placeholder="Semestre*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
@@ -382,43 +384,43 @@
                 <label class="title">Ready Hacker 5</label>
                     <label class="instruction">Ingresa tus datos generales y de contacto.</label>
                     <div class="form-field">
-                        <label class="form-label">Nombre*</label>
-                        <input class="text-field" type="text" placeholder="Antonio Stark*" formControlName="name">
+                        <label [ngClass]="{'input-error': name}" class="form-label">Nombre*</label>
+                        <input class="text-field" type="text" placeholder="Nombre*" formControlName="name">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Dirección de correo electrónico*</label>
+                        <label [ngClass]="{'input-error': email}" class="form-label">Dirección de correo electrónico*</label>
                         <input class="text-field" type="email" placeholder="example@domain.com*" formControlName="email">
                     </div>
                     <div class="form-field">
-                        <label class="form-label">Discord ID*</label>
-                        <input class="text-field" type="text" placeholder="amazingusername*" formControlName="discord">
+                        <label [ngClass]="{'input-error': discord}" class="form-label">Discord ID*</label>
+                        <input class="text-field" type="text" placeholder="discordID#1234*" formControlName="discord">
                     </div>
                     <div class="form-field" *ngIf="externalFlag">
-                        <label class="form-label">Universidad/Institución de Estudios*</label>
-                        <input class="text-field" type="text" placeholder="Escuela de Magia y Hechizeria*" formControlName="code">
+                        <label [ngClass]="{'input-error': code}" class="form-label">Universidad/Institución de Estudios*</label>
+                        <input class="text-field" type="text" placeholder="Universidad/Institución de Estudios*" formControlName="code">
                     </div>
                     <div class="double-field" *ngIf="!externalFlag">
                         <div class="form-field">
-                            <label class="form-label">Matrícula*</label>
-                            <input class="text-field" type="text" placeholder="A00000000*" formControlName="code">
+                            <label [ngClass]="{'input-error': code}" class="form-label">Matrícula*</label>
+                            <input class="text-field" type="text" placeholder="Matrícula*" formControlName="code">
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
                             <label class="form-label">Campus*</label>
-                            <input class="text-field" type="text" placeholder="Tlaxcala*" formControlName="campus">
+                            <input class="text-field" type="text" placeholder="Campus*" formControlName="campus">
                         </div>
                     </div>
                     <div class="double-field">
                         <div class="form-field">
-                            <label class="form-label">Carrera*</label>
-                            <input class="text-field" type="text" placeholder="ITC*" formControlName="program">
+                            <label [ngClass]="{'input-error': program}" class="form-label">Carrera*</label>
+                            <input class="text-field" type="text" placeholder="Carrera*" formControlName="program">
                             <label class="disclaimer"><span style="color: white;">.</span></label>
                         </div>
                         <div style="width: 50px;"></div>
                         <div class="form-field">
-                            <label class="form-label">Semestre*</label>
+                            <label [ngClass]="{'input-error': semester}" class="form-label">Semestre*</label>
 
-                            <input class="text-field" type="text" placeholder="Doceavo*" formControlName="semester">
+                            <input class="text-field" type="text" placeholder="Semestre*" formControlName="semester">
                             <label class="disclaimer">*No necesariamente acreditados</label>
                         </div>
                     </div>
@@ -450,10 +452,6 @@
                         <button class="continue" (click)="submitHackerForm()">Registrarse</button>
                     </div>
             </div>
-            <!--
-                <pre>{{teamInfo.value | json}}</pre>
-            -->
-                
         </form>
     </mat-drawer-content>
 </mat-drawer-container>

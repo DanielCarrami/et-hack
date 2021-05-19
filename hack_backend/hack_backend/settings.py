@@ -82,13 +82,17 @@ WSGI_APPLICATION = 'hack_backend.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'et-hack',
+        'NAME': 'et_hack',
+        #'NAME': 'et-hack',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'db',
+        'HOST': 'localhost',
+        #'HOST': 'db',
         'PORT': 5432, 
     }
 }
+
+
 
 
 
@@ -115,7 +119,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:4200",
     "http://localhost:8080",
     "http://127.0.0.1:8080",
-    "201.138.156.1"
+    "http://201.138.156.1"
 ]
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -142,3 +146,5 @@ EMAIL_HOST_USER = 'cej.pue@gmail.com'
 EMAIL_HOST_PASSWORD = 'unenosune'
 EMAIL_USE_TLS = True
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

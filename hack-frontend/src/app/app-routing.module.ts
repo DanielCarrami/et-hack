@@ -5,12 +5,14 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { FormSuccessComponent} from './modals/form-success/form-success.component';
 import { InitialTransitionComponent } from './initial-transition/initial-transition.component';
 import { InitialAnimationComponent } from './initial-animation/initial-animation.component';
+import {RegisterBeginComponent} from './register-begin/register-begin.component';
 
 const routes: Routes = [
   {path: '', component: InitialAnimationComponent},
   {path: 'home', component: MainPageComponent, data: {animation: 'HomePage'}},
   {path: 'registration', component: RegistrationComponent},
   {path: 'registrationsuccess', component: FormSuccessComponent},
+  {path: 'readyregister', component: RegisterBeginComponent},
   {path: 'enterthehacker', component: InitialTransitionComponent, data: {animation: 'TransitionPage'}}
 ];
 
