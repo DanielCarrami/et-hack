@@ -27,6 +27,7 @@ export class RegistrationComponent implements OnInit {
   externalFlag: boolean = false;
   isChecked: boolean = false;
   termsFlag: boolean = false;
+  terms: boolean = true;
 
   name: boolean = false;
   email: boolean = false;
@@ -35,6 +36,8 @@ export class RegistrationComponent implements OnInit {
   code: boolean = false;
   program: boolean = false;
   semester:  boolean = false;
+
+  loading: boolean = false;
 
   ranks = [
     {name: "Transporte", icon: "assets/images/transporte.png", show: true, width: '200px', height: '70px'},
@@ -151,6 +154,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   continue(change: any): void{
+    
     this.name = false; this.email = false; this.phone= false; this.discord=false; this.code = false; this.program = false; this.semester = false;
     if(change < this.step){
       this.step = change;
@@ -255,6 +259,10 @@ export class RegistrationComponent implements OnInit {
   }
 
   submitHackerForm(): void {
+    if(!this.termsFlag){
+      this.terms = false;
+      return;
+    }
 
     if(this.externalFlag){
       this.teamInfo.value.hackerM.campus = "NA";
@@ -264,13 +272,17 @@ export class RegistrationComponent implements OnInit {
       this.teamInfo.value.hacker5.campus = "NA";
     }
 
+
     
     console.log(this.teamInfo.value);
+    this.loading = true;
     this.crudService.create(this.teamInfo.value).then(res =>{
       console.log("Success");
+      this.loading = false;
       this.router.navigate(['/registrationsuccess'])
 
     }).catch(err => {
+      this.loading = true;
       this.openFailureDialog();
       console.log("Error " + err)
       this.router.navigate(['/home'])

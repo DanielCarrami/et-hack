@@ -1,3 +1,6 @@
+<div *ngIf="loading" class="loading">
+    <mat-spinner></mat-spinner>
+</div>
 <div class="main">
 <mat-drawer-container class="container" >
     <mat-drawer mode="side" opened>
@@ -441,11 +444,11 @@
                     </div>
                     <div class="terms-radio">
                         <label>
-                        <input type="checkbox" id="accept-terms" name="radio">
+                        <input type="checkbox" id="accept-terms" name="radio" [(ngModel)]="termsFlag"  [ngModelOptions]="{standalone: true}">
                         <span class="checkmark"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acepto los términos y condiciones anteriores
                         </label>
                     </div>
-                    <span class="text-danger" *ngIf="termsFlag">No olvides aceptar los terminos y condiciones</span>
+                    <span class="text-danger" *ngIf="!terms">No olvides aceptar los terminos y condiciones</span>
                     
                     <div class="button-rack">
                         <button class="back" (click)="continue(8)">Regresar</button>

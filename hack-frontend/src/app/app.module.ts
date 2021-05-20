@@ -23,6 +23,7 @@ import { AboutHackComponent } from './about-hack/about-hack.component';
 import { FaqSectionComponent } from './faq-section/faq-section.component';
 import {MatExpansionModule} from '@angular/material/expansion'
 import {MatSelectModule} from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { SponsorBannerComponent } from './sponsor-banner/sponsor-banner.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
@@ -84,6 +85,7 @@ export function playerFactory() {
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     PreventDoubleSubmitModule.forRoot(),
     ToastrModule.forRoot(),
     LottieModule.forRoot({ player: playerFactory })
