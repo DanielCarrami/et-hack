@@ -14,7 +14,7 @@ def send_email(modeladmin, request, queryset):
     for email in email_list:
         send_mail(
            'Confirmación de registro Et-Hack',
-            'Este mensaje es una prueba',
+            'Esto no es ninguna simulación, has sido HACKEADO para hacer el CAMBIO\nBienvenidx a la primera edición de Et-Hack, organizado por estudiantes del Tecnológico de Monterrey Campus Puebla\nPrepárate junto con los mejores desde el día 12 de junio en los diferentes talleres preparados para ti y el 20 de junio explota tus ideas para crear una novedosa solución que nos hackee la mente.\n¡En los próximos días te añadiremos a nuestra comunidad en Discord en donde se llevará a cabo el evento y podrás convivir con lxs demás participantes!\nNo te olvides de seguirnos en nuestras redes para no perderte de ninguna noticia sobre el Et-Hack:\ninstagram.com/fetec.pue\nfacebook.com/FETECPuebla\nAdemás, FORIGNALS.MX presenta sus asombrosas playeras que cuentan con una promoción única para nuestros hackers participantes que próximamente podrás conocer en su página de instagram @foriginals.mx',
             'Et-Hack',
             [email],
             fail_silently=False
