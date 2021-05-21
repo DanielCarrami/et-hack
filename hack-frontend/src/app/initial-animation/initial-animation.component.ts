@@ -17,12 +17,9 @@ export class InitialAnimationComponent implements OnInit {
     // and removed onDestroy
     // To see what changed:
     this.counter++;
-    if(this.counter == 5){
+    if(this.counter == 3){
       this.router.navigate(['/enterthehacker'])
     }
-    console.log(event);
-    console.log(event.srcElement);
-    console.log('I am scrolling ' + this.counter);
   };
 
   ngOnInit(): void {

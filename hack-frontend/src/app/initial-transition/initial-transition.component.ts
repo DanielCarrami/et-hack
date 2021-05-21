@@ -21,7 +21,6 @@ export class InitialTransitionComponent implements OnInit {
   isShown: boolean = true;
 
   animationCreated(animationItem: AnimationItem): void {
-    console.log('Holaaa' + animationItem);
     setTimeout(()=> {
       this.isShown=false;
       this.router.navigate(['/home'])

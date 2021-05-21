@@ -274,10 +274,9 @@ export class RegistrationComponent implements OnInit {
 
 
     
-    console.log(this.teamInfo.value);
     this.loading = true;
     this.crudService.create(this.teamInfo.value).then(res =>{
-      console.log("Success");
+
       this.loading = false;
       this.router.navigate(['/registrationsuccess'])
 

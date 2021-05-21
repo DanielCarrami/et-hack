@@ -55,7 +55,6 @@ export class TalksMentorsComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
       this.dialogValue = result.data;
     });
   }

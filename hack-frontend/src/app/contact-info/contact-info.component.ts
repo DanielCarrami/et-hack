@@ -38,7 +38,6 @@ export class ContactInfoComponent implements OnInit {
       this.showFailure()
     }else{
       this.crudService.send_mail(formData).then(res => {
-        console.log(res);
         this.mail.value['message_name']="";
         this.mail.value['message_email']="";
         this.mail.value['message']="";

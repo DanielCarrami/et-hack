@@ -1,31 +1,36 @@
 version: "3.9"
    
 services:
-  db:
+  et-hack-postgres:
     image: postgres
+    container_name: et-hack-postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ./data/et-hack-postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=et-hack
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-  web:
-    image: danielcarra/et-hack-compose-test
+      - POSTGRES_USER=et-hacker-admin
+      - POSTGRES_PASSWORD=unemeune69
+  hack_backend:
     build: hack_backend
-    command: python manage.py runserver 0.0.0.0:8000
+    container_name: hack_backend
+    command: python manage.py runserver 0.0.0.0:8080
+    
     volumes:
       - ./hack_backend:/code
     ports:
-      - "8000:8000"
-    depends_on:
-      - db
-  angular:
-    build: hack-frontend
-    image: danielcarra/et-hack-compose-test
-    ports:
-      - "4000:80"
-    depends_on:
-      - web
+      - "8080:8080"
     links:
-      - web
+      - et-hack-postgres
+    depends_on:
+      - et-hack-postgres
+  angular:
+    build: ./hack-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - hack_backend
+    links:
+      - hack_backend
 
+volumes:
+  et-hack-postgres:

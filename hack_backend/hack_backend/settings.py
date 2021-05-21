@@ -82,12 +82,10 @@ WSGI_APPLICATION = 'hack_backend.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'et_hack',
-        #'NAME': 'et-hack',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        #'HOST': 'db',
+        'NAME': 'et-hack',
+        'USER': 'et-hacker-admin',
+        'PASSWORD': 'unemeune69',
+        'HOST': 'et-hack-postgres',
         'PORT': 5432, 
     }
 }
@@ -117,8 +115,10 @@ AUTH_PASSWORD_VALIDATORS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://127.0.0.1:4200",
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
+    "http://0.0.0.0:4200",
+    "http://localhost:80",
+    "http://127.0.0.1:80",
+    "http://0.0.0.0:80",
     "http://201.138.156.1"
 ]
 # Internationalization

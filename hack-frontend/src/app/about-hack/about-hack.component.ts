@@ -32,17 +32,13 @@ export class AboutHackComponent implements OnInit {
     this.screenWidth = window.innerWidth;
 
     this.screenHeight = window.innerHeight;
-    console.log(this.screenHeight);
-    console.log(this.screenWidth);
-    console.log('Hello');
+
     if(this.open){
-      console.log('Open');
       this.open = false;
       this.backheight = '100vh';
       this.margintop = '0';
       this.showbutton = '';
     }else{
-      console.log('Close');
       if(this.screenWidth < 700){
         this.backheight = '250vh';
         this.margintop = '-1200';
