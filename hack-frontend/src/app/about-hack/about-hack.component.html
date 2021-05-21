@@ -16,7 +16,7 @@
 
 <div class="about-background" [ngStyle]="{height: backheight}">
     <mat-accordion  [ngStyle]="setMyStyle(margintop)">
-        <mat-expansion-panel hideToggle [expanded]="panelOpenState">
+        <mat-expansion-panel hideToggle [(expanded)]="panelOpenState">
             <mat-expansion-panel-header (click)="onExpansion()">
                 <div class="great-container">
                     <div class="text-container">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="down">
-                    <button class="button" style="margin-top: -20px;" (click)="togglePanel">Mostrar Menos</button>
+                    <button class="button" style="margin-top: -20px;" (click)="togglePanel()">Mostrar Menos</button>
 
                     <p class="upper-text">*Registro gratuito para todo el público</p>
                 </div>
