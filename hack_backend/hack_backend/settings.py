@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'b9piajg4q-g50sgn19&odf)29wyhns=1fn5(a$w119i38&tvb&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -145,6 +145,3 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'cej.pue@gmail.com'
 EMAIL_HOST_PASSWORD = 'unenosune'
 EMAIL_USE_TLS = True
-
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'

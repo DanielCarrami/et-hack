@@ -28,7 +28,3 @@ class Team(models.Model):
 
     def __str__(self):
         return '%s' % (self.name)
-
-class Sponsor(models.Model):
-    name = models.CharField(null=True, max_length=255)
-    image = models.ImageField(upload_to="images/")

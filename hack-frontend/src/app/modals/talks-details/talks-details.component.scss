@@ -7,7 +7,7 @@
 }
 .talks-background{
     height: 100%;
-    overflow-y: visible;
+    overflow: visible;
 }
 //when dialog opens
 .custom-dialog-backdrop-class{
@@ -22,8 +22,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-height: 100vh; 
-    overflow-y: hidden;
+    height: 100%;
+    overflow: visible;
 }
 h2{
     font-family: 'IBM Plex Sans Bold';

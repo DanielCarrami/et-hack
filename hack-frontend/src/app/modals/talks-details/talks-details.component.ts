@@ -39,6 +39,6 @@ export class TalksDetailsComponent implements OnInit {
 
   register(){
     this.dialogRef.close({ event: 'close' });
-    this.router.navigate(['/registration'])
+    this.router.navigate(['/readyregister'])
   }
 }

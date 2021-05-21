@@ -47,14 +47,14 @@
     display: flex;
     height: 100%;
     flex-direction: column;
-    animation: scroll 12s linear infinite;
+    animation: scroll 14s linear infinite;
 }
 
 .cascade-list2{
     display: flex;
     height: calc(250px * 4);
     flex-direction: column;
-    animation: reverse-scroll 12s linear infinite;
+    animation: reverse-scroll 14s linear infinite;
 }
 
 .slide{
@@ -74,13 +74,13 @@ img{
         transform: translateY(0);
     }
     100%{
-        transform: translateY(-618px * 2);
+        transform: translateY(-868px * 2);
     }
 }
 
 @keyframes reverse-scroll {
     0%{
-        transform: translateY(-618px * 2);
+        transform: translateY(-744px * 2);
     }
     100%{
         transform: translateY(0);
