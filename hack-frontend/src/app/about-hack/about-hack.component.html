@@ -1,4 +1,4 @@
-<div class="about-background">
+<!-- 
     <div class="main-container">
         <div class="text-container">
             <p class="upper-text">Sobre el Hackathon</p>
@@ -12,4 +12,53 @@
             <img src="assets/images/laptop.png" alt="laptop.png" class="main-img">
         </div>
     </div>
+-->
+
+<div class="about-background" [ngStyle]="{height: backheight}">
+    <mat-accordion  [ngStyle]="setMyStyle(margintop)">
+        <mat-expansion-panel hideToggle [expanded]="panelOpenState">
+            <mat-expansion-panel-header (click)="onExpansion()">
+                <div class="great-container">
+                    <div class="text-container">
+                        <p class="upper-text">Sobre el Hackathon</p>
+                        <h1 class="main-text">Hackeando<br>por el campus</h1>
+                        <p class="main-text-desc">Participa para ganar increíbles premios<br>de nuestros colaboradores y tener la<br>oportunidad de aplicar tu proyecto<br>al campus</p>
+                        <div class="button-container" [ngStyle]="{'visibility': showbutton}"> 
+                            <a class="button">Descubre más</a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <img src="assets/images/laptop.png" alt="laptop.png" class="main-img">
+                    </div>
+                </div>
+            </mat-expansion-panel-header>
+            <div class="inside-container">
+                <div class="info-rack">
+                    <div class="rack">
+                        <h1>¿Cuándo?</h1>
+                        <img class="logo" src="assets/images/calendario.png">
+                        <p class="main-text-desc">El fin de semana del 19 y 20 de Julio; además podrás asistir a pláticas y talleres previos al evento</p>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="rack">
+                        <h1>¿Dónde?</h1>
+                        <img class="logo" src="assets/images/discord.png">
+                        <p class="main-text-desc">A través de la plataforma Discord y sitios web destinados a brindarte la mejor experiencia</p>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="rack">
+                        <h1>¿Para qué?</h1>
+                        <img class="logo" style="height: 100px; width: 80px;" src="assets/images/premio.png">
+                        <p class="main-text-desc">El proyecto ganador será seleccionado para ser aplicado dentro del campus Puebla y podrás ganar muchos premios</p>
+                    </div>
+                </div>
+                <div class="down">
+                    <button class="button" style="margin-top: -20px;" (click)="togglePanel">Mostrar Menos</button>
+
+                    <p class="upper-text">*Registro gratuito para todo el público</p>
+                </div>
+                
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>
