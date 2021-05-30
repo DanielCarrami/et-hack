@@ -26,7 +26,7 @@ export class ContactInfoComponent implements OnInit {
   }
 
   showFailure(){
-    this.toastr.error('Hubo un error', 'Intentalo más tarde')
+    this.toastr.error('Intentalo más tarde o mandanos un DM por la cuenta oficial del comité @fetec.pue', 'Hubo un error')
   }
 
   sendMail(): void{
