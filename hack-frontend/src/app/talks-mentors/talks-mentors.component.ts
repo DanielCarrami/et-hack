@@ -41,7 +41,7 @@ export class TalksMentorsComponent {
   openDialog(name: string, person: string, description: string, photo: string, about: string): void {
     const dialogRef = this.dialog.open(TalksDetailsComponent, {
       width: '1200px',
-      height: '600px',
+      height: '570px',
       backdropClass: "bdrop",
       //panelClass: 'custom-dialog-panel-class',
       data: {
