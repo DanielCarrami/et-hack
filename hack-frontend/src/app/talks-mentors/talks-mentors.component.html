@@ -81,6 +81,26 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="carousel-item">
+                            <div class="row" *ngFor="let mentor of mentors_4">
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="{{mentor.photo}}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <div style="display: flex; align-items: center; justify-content:flex-start; 
+                                            height: 80px;">
+                                                <h5 class="card-title">{{mentor.name}}</h5>
+                                            </div>
+                                            <p class="card-text">Por {{mentor.person}} de</p>
+                                            <div class="l-container">
+                                                <img class="logo-container" src="{{mentor.logo}}" alt="Logo imagecap">
+                                            </div>
+                                            <button (click)="openDialog(mentor.name, mentor.person, mentor.description, mentor.detail, mentor.about_person)" id="btn1">Conoce más ></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <a class="carousel-control-prev" href="#mentors-carousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
